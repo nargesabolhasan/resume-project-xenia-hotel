@@ -1,1 +1,21 @@
 @use '-variable' as v;
+
+@mixin display-flex($display){
+    display: flex;
+    flex-direction: $display;
+    justify-content: space-around;  
+    align-items: center;
+}
+@mixin list-style($style-type){
+    list-style-type:$style-type;
+}
+@mixin position($type,$top:auto,$right:auto,$bottom:auto,$left:auto){
+    position:$type;
+    top:$top;
+    right:$right;
+    bottom:$bottom;
+    left:$left;   
+}
+@mixin center{
+    margin: 0 auto;
+}

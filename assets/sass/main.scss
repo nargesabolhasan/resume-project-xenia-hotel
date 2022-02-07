@@ -1,2 +1,43 @@
 @use '-variable' as v;
 @import '-mixinLibrary';
+
+*,*::after,*::before{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: inherit;
+};
+body{
+    box-sizing:border-box;
+};
+
+.navBar{
+    @include display-flex(row);
+    position: relative;
+    // padding:50px 2px;
+    opacity: 0.4;
+    width:100%;
+    height:100px;
+    
+};
+
+.ul-style-nav{
+    @include display-flex(row);
+    @include list-style(none);
+    
+};
+.left-nav-item{
+    @include position(absolute,20px,auto,auto,10px)
+
+};
+.center-nav-item{
+    @include center;
+};
+.right-nav-item{
+    @include position(absolute,30px,1%)
+};
+.nav-li{
+    margin-right: 22px;
+};
+.button{
+    padding: v.$botton-padding;
+};

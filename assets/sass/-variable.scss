@@ -9,5 +9,19 @@ $color-pallet:(
     "dark-gray":#1F1F2C,
    "dark-yellow": #c5bc58,
 );
+$botton-padding :8px 24px;
+
+@each $name , $code in $color-pallet{
+    .bg-color-#{$name}{
+        background-color:$code ;
+    };
+    .br-color-#{$name}{
+        border:2px solid $code ;
+    };
+    .txt-color-#{$name}{
+        color:$code ;
+    };
+};
+
 
 
