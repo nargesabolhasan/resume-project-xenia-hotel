@@ -40,8 +40,9 @@ body{
 };
 .first-slide-show{
     .carousel-inner{  
-     @include width-height(100%,75%);
+     @include width-height(100%,100%);
      @include position(absolute,0%,0%,0%,0%);
+     z-index: -1;
     }
     .carousel-img{
         @include  carousel-style;
@@ -50,19 +51,19 @@ body{
 #carousel-prev{
     @include width-height(44px,50px);
     @include btn-carousel;
-    @include position(absolute,35%,auto,auto,0%);
+    @include position(absolute,45%,auto,auto,0%);
     background-image: url('../images/prev-btn.png');
 }   
  #carousel-next{
     @include width-height(44px,50px);
     @include btn-carousel;
-    @include position(absolute,35%,0%,auto,auto);
+    @include position(absolute,45%,0%,auto,auto);
     background-image: url('../images/next-btn.png');
   
 }
 .date-box{
     @include width-height(1170px,284px);
-    @include position(absolute,70%,auto,auto,20%);
+    @include position(relative,75%,auto,auto,20%);
     .btn-holder{
         @include width-height(780px,100%);
         @include display-flex(row);
@@ -80,4 +81,37 @@ body{
         padding:12px 32px ;
         @include btn-animate(map-get(v.$color-pallet,"dark-gray"),map-get(v.$color-pallet,"green"),map-get(v.$color-pallet,"light-gray"));
     }
+}
+.wraper2{
+    @include position(relative,280px,auto,auto,0%);
+    @include display-flex(column);
+}
+.text-box{
+    padding:0px 240px;
+    margin:v.$center;
+    h1{
+        text-align: center;
+        margin-bottom: 20px ;
+    }
+    
+    h2{
+        font-size:150px ;
+        opacity:8%;
+        @include position(absolute,-60px,28%,auto,auto);
+    }
+    h3{
+        margin-top:80px;
+        margin-bottom:5px;
+    }
+    img{
+        border-radius: 50%;
+        margin-top:30px;
+        @include width-height(70px,70px);
+    }
+    h4{
+        margin-top:20px ;
+        margin-bottom: 10px;
+    }
+
+
 }

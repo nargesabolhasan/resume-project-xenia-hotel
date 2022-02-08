@@ -10,6 +10,7 @@
     justify-content: space-around;  
     align-items: center;
     flex-wrap: wrap;
+    text-align: center
 }
 @mixin list-style($style-type){
     list-style-type:$style-type;
