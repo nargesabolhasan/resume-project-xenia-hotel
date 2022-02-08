@@ -1,5 +1,9 @@
 @use '-variable' as v;
 
+@mixin width-height($width,$height){
+    width:$width;
+    height:$height
+}
 @mixin display-flex($display){
     display: flex;
     flex-direction: $display;
@@ -16,6 +20,19 @@
     bottom:$bottom;
     left:$left;   
 }
-@mixin center{
-    margin: 0 auto;
+@mixin img-style {
+    object-position: center center;
+    object-fit: cover;
+}
+@mixin carousel-style{
+    @include img-style;
+    @include width-height(100%,100%);
+    @include position(absolute,0%,0%,0%,0%);
+}
+
+@mixin btn-carousel {
+    opacity: 0.5;
+    &:hover{
+        opacity: 1;
+    }
 }

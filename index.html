@@ -13,7 +13,7 @@
 <body>
     <div class="container">
     <!------***nav***------->
-        <div class="navBar bg-color-black">
+        <div class="navBar bg-color-black-opa">
             <div class="left-nav-item">
                 <img src="assets/images/logo.webp" alt="test" style="width:100px">
             </div>
@@ -37,8 +37,15 @@
             </div>
         </div>
     <!------***first slide show***------->
-        <div class="first-slide-show">
-            <div class="contain-slide-show">
+        <div class="first-slide-show ">
+            <div class="carousel-inner" id ="carousel">
+                <img class="carousel-img" src="assets/images/spa.jpg" alt="test">
+                <img class="carousel-img" src="assets/images/slider_n_1.jpg" alt="test">
+                <img class="carousel-img" src="assets/images/slide_n_2_o.jpg" alt="test">
+            </div>
+            <div class="carousel-btn">
+                <span id="carousel-prev" ></span>
+                <span id="carousel-next" ></span>
             </div>
         </div>
     <!------***Date box***------->
@@ -103,6 +110,6 @@
 
 
     </div>
+    <script src="index.js"></script>
 </body>
-
 </html>
