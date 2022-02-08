@@ -35,6 +35,8 @@ body{
 };
 .button{
     padding: v.$botton-padding;
+    @include btn-animate(map-get(v.$color-pallet,"dark-yellow"),map-get(v.$color-pallet,"light-gray"),map-get(v.$color-pallet,"dark-yellow"));
+    
 };
 .first-slide-show{
     .carousel-inner{  
@@ -48,13 +50,34 @@ body{
 #carousel-prev{
     @include width-height(44px,50px);
     @include btn-carousel;
-    @include position(absolute,40%,auto,auto,0%);
+    @include position(absolute,35%,auto,auto,0%);
     background-image: url('../images/prev-btn.png');
 }   
  #carousel-next{
     @include width-height(44px,50px);
     @include btn-carousel;
-    @include position(absolute,40%,0%,auto,auto);
+    @include position(absolute,35%,0%,auto,auto);
     background-image: url('../images/next-btn.png');
   
+}
+.date-box{
+    @include width-height(1170px,284px);
+    @include position(absolute,70%,auto,auto,20%);
+    .btn-holder{
+        @include width-height(780px,100%);
+        @include display-flex(row);
+        margin:v.$center;
+        text-align: center;
+        padding-top: 20px
+    }
+    .btn-date{
+        @include width-height(360px,97px);
+        padding:28px 24px ;
+        font-size:20px;
+        margin-top: 20px;
+    }
+    .button2{
+        padding:12px 32px ;
+        @include btn-animate(map-get(v.$color-pallet,"dark-gray"),map-get(v.$color-pallet,"green"),map-get(v.$color-pallet,"light-gray"));
+    }
 }

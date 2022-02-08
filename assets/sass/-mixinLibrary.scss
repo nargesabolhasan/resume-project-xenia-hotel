@@ -1,6 +1,6 @@
 @use '-variable' as v;
 
-@mixin width-height($width,$height){
+@mixin width-height($width:auto,$height:auto){
     width:$width;
     height:$height
 }
@@ -9,6 +9,7 @@
     flex-direction: $display;
     justify-content: space-around;  
     align-items: center;
+    flex-wrap: wrap;
 }
 @mixin list-style($style-type){
     list-style-type:$style-type;
@@ -36,3 +37,41 @@
         opacity: 1;
     }
 }
+@mixin btn-animate($bg1,$bg2,$txt) {
+    display: inline-block;
+    text-transform: uppercase;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+        background-color:$bg1 ;   
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background-color:$bg2 ;
+        transition: all .3s;
+        z-index: -1;
+    }
+    &:hover {
+        color:$txt;
+        &:before {
+            height: 100%;
+        }
+    }
+
+}
+
+
