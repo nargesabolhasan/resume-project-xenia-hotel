@@ -26,10 +26,20 @@
     object-position: center center;
     object-fit: cover;
 }
+
 @mixin carousel-style{
     @include img-style;
     @include width-height(100%,100%);
     @include position(absolute,0%,0%,0%,0%);
+}
+
+@mixin font-style($font,$size:18px,$weight:200,$height: 1.5) {
+-webkit-font-smoothing: antialiased;
+font-family:$font;
+font-size:$size;
+font-weight:$weight;
+line-height:$height;
+overflow-x:hidden;
 }
 
 @mixin btn-carousel {

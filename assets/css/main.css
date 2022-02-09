@@ -473,11 +473,21 @@ body {
   margin: 0 auto;
 }
 .text-box h1 {
-  text-align: center;
   margin-bottom: 20px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Playfair Display;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  overflow-x: hidden;
 }
 .text-box h2 {
-  font-size: 150px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Playfair Display;
+  font-size: 140px;
+  font-weight: 200;
+  line-height: 1;
+  overflow-x: hidden;
   opacity: 8%;
   position: absolute;
   top: -60px;
@@ -488,16 +498,38 @@ body {
 .text-box h3 {
   margin-top: 80px;
   margin-bottom: 5px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Playfair Display;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+.text-box h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.text-box h6 {
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+.text-box p {
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 .text-box img {
   border-radius: 50%;
   margin-top: 30px;
   width: 70px;
   height: 70px;
-}
-.text-box h4 {
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

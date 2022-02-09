@@ -90,28 +90,34 @@ body{
     padding:0px 240px;
     margin:v.$center;
     h1{
-        text-align: center;
         margin-bottom: 20px ;
+        @include font-style(v.$font-f1,40px,700,1.1);
     }
     
     h2{
-        font-size:150px ;
+        @include font-style(v.$font-f1,140px,200,1);
         opacity:8%;
         @include position(absolute,-60px,28%,auto,auto);
     }
     h3{
         margin-top:80px;
         margin-bottom:5px;
+        @include font-style(v.$font-f1);
+    }
+    h4{
+        margin-top:20px ;
+        margin-bottom: 10px;
+    }
+    h6{
+        @include font-style(v.$font-Stext,13px,300,1.5);
+    }
+    p{
+        @include font-style(v.$font-Stext);
     }
     img{
         border-radius: 50%;
         margin-top:30px;
         @include width-height(70px,70px);
     }
-    h4{
-        margin-top:20px ;
-        margin-bottom: 10px;
-    }
-
 
 }
