@@ -14,6 +14,7 @@ $botton-padding :8px 24px;
 $center:0 auto;
 $font-f1: Playfair Display;
 $font-Stext:Source Sans Pro;
+$standard-margin:20px;
 
 @each $name , $code in $color-pallet{
     .bg-color-#{$name}{

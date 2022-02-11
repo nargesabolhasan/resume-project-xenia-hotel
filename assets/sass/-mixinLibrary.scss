@@ -4,11 +4,11 @@
     width:$width;
     height:$height
 }
-@mixin display-flex($display){
+@mixin display-flex($display,$align:center){
     display: flex;
     flex-direction: $display;
     justify-content: space-around;  
-    align-items: center;
+    align-items: $align;
     flex-wrap: wrap;
     text-align: center
 }
@@ -85,4 +85,17 @@ overflow-x:hidden;
 
 }
 
+@mixin card($content){
+        @include display-flex(column,flex-start);
+        padding:0px 15px;
+        &::before{
+            content:$content;
+            @include width-height(33px,16px);
+            @include img-style;
+            @include position(relative,20px);
+            z-index: 2;
+            padding-left:40px;
+        }
+    
+}
 

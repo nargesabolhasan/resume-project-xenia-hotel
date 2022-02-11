@@ -85,6 +85,7 @@ body{
 .wraper2{
     @include position(relative,280px,auto,auto,0%);
     @include display-flex(column);
+    text-align:center;
 }
 .text-box{
     padding:0px 240px;
@@ -95,29 +96,56 @@ body{
     }
     
     h2{
+        @include width-height(auto,150px);
         @include font-style(v.$font-f1,140px,200,1);
         opacity:8%;
-        @include position(absolute,-60px,28%,auto,auto);
+        @include position(absolute,-60px,30%,auto,auto);
     }
     h3{
-        margin-top:80px;
-        margin-bottom:5px;
+        margin:v.$standard-margin;
         @include font-style(v.$font-f1);
     }
     h4{
-        margin-top:20px ;
-        margin-bottom: 10px;
+        @include font-style(v.$font-Stext,18px,200,1.5);
+        margin:v.$standard-margin;
     }
     h6{
         @include font-style(v.$font-Stext,13px,300,1.5);
+        
     }
     p{
         @include font-style(v.$font-Stext);
     }
-    img{
+    .avatar{
         border-radius: 50%;
         margin-top:30px;
         @include width-height(70px,70px);
+    }
+    .icone-xab{
+        margin:v.$standard-margin;
+    }
+}
+.main-gallory{
+    @include display-flex(row);
+    margin-top:100px;
+    img{
+        @include img-style;
+        @include position(relative,0%,0%,0%,0%);
+        @include width-height(360px,540px);
+    }
+    .card-footer{
+        @include font-style(v.$font-f1,30px,700,1.1);
+        @include position(relative,0%,0%,60px,40px);
+        z-index: 3; 
+    }
+    #card-image-1{
+        @include card(url('../images/logo_gym.webp'));
+    }
+    #card-image-2{
+        @include card(url('../images/logo_spa.webp'));
+    }
+    #card-image-3{
+        @include card(url('../images/logo_restaurant.webp'));
     }
 
 }
