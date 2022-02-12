@@ -158,23 +158,26 @@ body{
     }
 
 }
-
+//---------------------wraper3----------------------------
+.wraper3{
+    @include width-height(100%);
+    transform: translateY(-120px);
+ 
+}
 //------******off box******--------
 .main-off{
-    @include width-height(100%,500px);
-    @include background;
-    @include position(relative,-120px,0%,0%,0%);
+    @include width-height(100%,600px);
     background-image: 
     linear-gradient(
         map-get(v.$color-pallet,"light-gray"),
         rgba(255, 255, 255, 0)), 
         url(../images/home-banner-1.jpg);
-        
-    
-    
+    @include background;
+
     .transform{
-        transform:translateY(200px);
-    } 
+        transform: translateY(200px);
+    }
+    
     .dark-button{
         padding: v.$botton-padding;
         @include btn-animate(map-get(v.$color-pallet,"light-gray"),
@@ -187,6 +190,16 @@ body{
 
 //------******Secound carousel******--------
 .Secound-slide-show{
-    
+    @include width-height(100%,662px);
+    padding-top: 96px;
+    .inner-slide-show{
+        @include width-height(60%,370px);
+        margin:v.$center;
+        img{
+            @include img-style;
+            @include width-height(50%,100%);
+            float: right;
+        }
+    }
 }
 

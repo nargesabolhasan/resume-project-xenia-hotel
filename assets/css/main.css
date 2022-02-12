@@ -671,18 +671,19 @@ body {
   padding-left: 40px;
 }
 
+.wraper3 {
+  width: 100%;
+  height: auto;
+  transform: translateY(-120px);
+}
+
 .main-off {
   width: 100%;
-  height: 500px;
+  height: 600px;
+  background-image: linear-gradient(#f4f4f4, rgba(255, 255, 255, 0)), url(../images/home-banner-1.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  top: -120px;
-  right: 0%;
-  bottom: 0%;
-  left: 0%;
-  background-image: linear-gradient(#f4f4f4, rgba(255, 255, 255, 0)), url(../images/home-banner-1.jpg);
 }
 .main-off .transform {
   transform: translateY(200px);
@@ -731,6 +732,24 @@ body {
 }
 .main-off .dark-button:hover:before {
   height: 100%;
+}
+
+.Secound-slide-show {
+  width: 100%;
+  height: 662px;
+  padding-top: 96px;
+}
+.Secound-slide-show .inner-slide-show {
+  width: 60%;
+  height: 370px;
+  margin: 0 auto;
+}
+.Secound-slide-show .inner-slide-show img {
+  object-position: center center;
+  object-fit: cover;
+  width: 50%;
+  height: 100%;
+  float: right;
 }
 
 /*# sourceMappingURL=main.css.map */
