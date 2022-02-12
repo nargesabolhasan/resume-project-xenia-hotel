@@ -49,6 +49,9 @@ overflow-x:hidden;
     }
 }
 @mixin btn-animate($bg1,$bg2,$txt) {
+    @include font-style(v.$font-Stext,13px,400,1.5);
+    text-align: center;
+    text-transform: uppercase;
     display: inline-block;
     text-transform: uppercase;
     transition: all .3s;
@@ -97,5 +100,10 @@ overflow-x:hidden;
             padding-left:40px;
         }
     
+}
+@mixin background{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 

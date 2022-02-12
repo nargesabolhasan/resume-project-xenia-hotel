@@ -9,12 +9,12 @@
 body{
     box-sizing:border-box;
 };
-
+//------******navBar******--------
 .navBar{
     @include display-flex(row);
     @include width-height(100%,100px);
     @include position(relative);
-    z-index: 999;
+    z-index: 9;
 };
 
 .ul-style-nav{
@@ -33,11 +33,13 @@ body{
 .nav-li{
     margin-right: 30px;
 };
-.button{
+.yellow-button{
     padding: v.$botton-padding;
-    @include btn-animate(map-get(v.$color-pallet,"dark-yellow"),map-get(v.$color-pallet,"light-gray"),map-get(v.$color-pallet,"dark-yellow"));
-    
+    @include btn-animate(map-get(v.$color-pallet,"dark-yellow"),
+    map-get(v.$color-pallet,"light-gray"),
+    map-get(v.$color-pallet,"dark-yellow"));
 };
+//------******carousel******--------
 .first-slide-show{
     .carousel-inner{  
      @include width-height(100%,100%);
@@ -61,6 +63,7 @@ body{
     background-image: url('../images/next-btn.png');
   
 }
+//------******date-box******--------
 .date-box{
     @include width-height(1170px,284px);
     @include position(relative,75%,auto,auto,20%);
@@ -69,19 +72,22 @@ body{
         @include display-flex(row);
         margin:v.$center;
         text-align: center;
-        padding-top: 20px
+        padding-top: v.$standard-margin;
     }
     .btn-date{
         @include width-height(360px,97px);
         padding:28px 24px ;
         font-size:20px;
-        margin-top: 20px;
+        margin-top: v.$standard-margin;
     }
-    .button2{
+    .green-button{
         padding:12px 32px ;
-        @include btn-animate(map-get(v.$color-pallet,"dark-gray"),map-get(v.$color-pallet,"green"),map-get(v.$color-pallet,"light-gray"));
+        @include btn-animate(map-get(v.$color-pallet,"dark-gray"),
+        map-get(v.$color-pallet,"green"),
+        map-get(v.$color-pallet,"light-gray"));
     }
 }
+//---------------------wraper2----------------------------
 .wraper2{
     @include position(relative,280px,auto,auto,0%);
     @include display-flex(column);
@@ -90,44 +96,47 @@ body{
 .text-box{
     padding:0px 240px;
     margin:v.$center;
-    h1{
-        margin-bottom: 20px ;
-        @include font-style(v.$font-f1,40px,700,1.1);
-    }
-    
-    h2{
-        @include width-height(auto,150px);
-        @include font-style(v.$font-f1,140px,200,1);
-        opacity:8%;
-        @include position(absolute,-60px,30%,auto,auto);
-    }
-    h3{
-        margin:v.$standard-margin;
-        @include font-style(v.$font-f1);
-    }
-    h4{
-        @include font-style(v.$font-Stext,18px,200,1.5);
-        margin:v.$standard-margin;
-    }
-    h6{
-        @include font-style(v.$font-Stext,13px,300,1.5);
-        
-    }
-    p{
-        @include font-style(v.$font-Stext);
-    }
-    .avatar{
-        border-radius: 50%;
-        margin-top:30px;
-        @include width-height(70px,70px);
-    }
-    .icone-xab{
-        margin:v.$standard-margin;
-    }
 }
+.h1{
+    margin-bottom: 20px ;
+    @include font-style(v.$font-f1,40px,700,1.1);
+}
+
+.h2{
+    @include width-height(auto,150px);
+    @include font-style(v.$font-f1,140px,200,1);
+    opacity:8%;
+    @include position(absolute,-60px,30%,auto,auto);
+}
+.h3{
+    margin:v.$standard-margin;
+    @include font-style(v.$font-f1);
+}
+.h4{
+    @include font-style(v.$font-Stext,18px,200,1.5);
+    margin:v.$standard-margin;
+}
+.h6{
+    @include font-style(v.$font-Stext,13px,300,1.5);
+    
+}
+.p{
+    @include font-style(v.$font-Stext);
+}
+.avatar{
+    border-radius: 50%;
+    margin-top:30px;
+    @include width-height(70px,70px);
+}
+.icone-xab{
+    margin:v.$standard-margin;
+}
+
+//------******cards******--------
 .main-gallory{
     @include display-flex(row);
     margin-top:100px;
+    z-index:3;
     img{
         @include img-style;
         @include position(relative,0%,0%,0%,0%);
@@ -149,3 +158,35 @@ body{
     }
 
 }
+
+//------******off box******--------
+.main-off{
+    @include width-height(100%,500px);
+    @include background;
+    @include position(relative,-120px,0%,0%,0%);
+    background-image: 
+    linear-gradient(
+        map-get(v.$color-pallet,"light-gray"),
+        rgba(255, 255, 255, 0)), 
+        url(../images/home-banner-1.jpg);
+        
+    
+    
+    .transform{
+        transform:translateY(200px);
+    } 
+    .dark-button{
+        padding: v.$botton-padding;
+        @include btn-animate(map-get(v.$color-pallet,"light-gray"),
+        map-get(v.$color-pallet,"dark-gray"),
+        map-get(v.$color-pallet,"light-gray"));
+        margin-top:v.$standard-margin;
+    }
+    
+}
+
+//------******Secound carousel******--------
+.Secound-slide-show{
+    
+}
+

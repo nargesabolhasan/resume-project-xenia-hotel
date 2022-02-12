@@ -262,7 +262,7 @@ body {
   right: auto;
   bottom: auto;
   left: auto;
-  z-index: 999;
+  z-index: 9;
 }
 
 .ul-style-nav {
@@ -299,8 +299,16 @@ body {
   margin-right: 30px;
 }
 
-.button {
+.yellow-button {
   padding: 8px 24px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+  text-align: center;
+  text-transform: uppercase;
   display: inline-block;
   text-transform: uppercase;
   transition: all 0.3s;
@@ -308,7 +316,7 @@ body {
   overflow: hidden;
   z-index: 1;
 }
-.button:after {
+.yellow-button:after {
   background-color: #c5bc58;
   content: "";
   position: absolute;
@@ -318,7 +326,7 @@ body {
   height: 100%;
   z-index: -2;
 }
-.button:before {
+.yellow-button:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -329,10 +337,10 @@ body {
   transition: all 0.3s;
   z-index: -1;
 }
-.button:hover {
+.yellow-button:hover {
   color: #c5bc58;
 }
-.button:hover:before {
+.yellow-button:hover:before {
   height: 100%;
 }
 
@@ -417,8 +425,16 @@ body {
   font-size: 20px;
   margin-top: 20px;
 }
-.date-box .button2 {
+.date-box .green-button {
   padding: 12px 32px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+  text-align: center;
+  text-transform: uppercase;
   display: inline-block;
   text-transform: uppercase;
   transition: all 0.3s;
@@ -426,7 +442,7 @@ body {
   overflow: hidden;
   z-index: 1;
 }
-.date-box .button2:after {
+.date-box .green-button:after {
   background-color: #1F1F2C;
   content: "";
   position: absolute;
@@ -436,7 +452,7 @@ body {
   height: 100%;
   z-index: -2;
 }
-.date-box .button2:before {
+.date-box .green-button:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -447,10 +463,10 @@ body {
   transition: all 0.3s;
   z-index: -1;
 }
-.date-box .button2:hover {
+.date-box .green-button:hover {
   color: #f4f4f4;
 }
-.date-box .button2:hover:before {
+.date-box .green-button:hover:before {
   height: 100%;
 }
 
@@ -473,7 +489,8 @@ body {
   padding: 0px 240px;
   margin: 0 auto;
 }
-.text-box h1 {
+
+.h1 {
   margin-bottom: 20px;
   -webkit-font-smoothing: antialiased;
   font-family: Playfair Display;
@@ -482,7 +499,8 @@ body {
   line-height: 1.1;
   overflow-x: hidden;
 }
-.text-box h2 {
+
+.h2 {
   width: auto;
   height: 150px;
   -webkit-font-smoothing: antialiased;
@@ -498,7 +516,8 @@ body {
   bottom: auto;
   left: auto;
 }
-.text-box h3 {
+
+.h3 {
   margin: 20px;
   -webkit-font-smoothing: antialiased;
   font-family: Playfair Display;
@@ -507,7 +526,8 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
-.text-box h4 {
+
+.h4 {
   -webkit-font-smoothing: antialiased;
   font-family: Source Sans Pro;
   font-size: 18px;
@@ -516,7 +536,8 @@ body {
   overflow-x: hidden;
   margin: 20px;
 }
-.text-box h6 {
+
+.h6 {
   -webkit-font-smoothing: antialiased;
   font-family: Source Sans Pro;
   font-size: 13px;
@@ -524,7 +545,8 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
-.text-box p {
+
+.p {
   -webkit-font-smoothing: antialiased;
   font-family: Source Sans Pro;
   font-size: 18px;
@@ -532,13 +554,15 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
-.text-box .avatar {
+
+.avatar {
   border-radius: 50%;
   margin-top: 30px;
   width: 70px;
   height: 70px;
 }
-.text-box .icone-xab {
+
+.icone-xab {
   margin: 20px;
 }
 
@@ -550,6 +574,7 @@ body {
   flex-wrap: wrap;
   text-align: center;
   margin-top: 100px;
+  z-index: 3;
 }
 .main-gallory img {
   object-position: center center;
@@ -644,6 +669,68 @@ body {
   left: auto;
   z-index: 2;
   padding-left: 40px;
+}
+
+.main-off {
+  width: 100%;
+  height: 500px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: -120px;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  background-image: linear-gradient(#f4f4f4, rgba(255, 255, 255, 0)), url(../images/home-banner-1.jpg);
+}
+.main-off .transform {
+  transform: translateY(200px);
+}
+.main-off .dark-button {
+  padding: 8px 24px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 20px;
+}
+.main-off .dark-button:after {
+  background-color: #f4f4f4;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+.main-off .dark-button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #1F1F2C;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.main-off .dark-button:hover {
+  color: #f4f4f4;
+}
+.main-off .dark-button:hover:before {
+  height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
