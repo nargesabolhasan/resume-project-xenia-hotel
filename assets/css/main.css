@@ -47,15 +47,15 @@
 }
 
 .bg-color-black {
-  background-color: #111118;
+  background-color: #15151e;
 }
 
 .br-color-black {
-  border: 2px solid #111118;
+  border: 2px solid #15151e;
 }
 
 .txt-color-black {
-  color: #111118;
+  color: #15151e;
 }
 
 .bg-color-light-gray {
@@ -191,15 +191,15 @@
 }
 
 .bg-color-black {
-  background-color: #111118;
+  background-color: #15151e;
 }
 
 .br-color-black {
-  border: 2px solid #111118;
+  border: 2px solid #15151e;
 }
 
 .txt-color-black {
-  color: #111118;
+  color: #15151e;
 }
 
 .bg-color-light-gray {
@@ -573,9 +573,9 @@ body {
   margin: 20px;
   -webkit-font-smoothing: antialiased;
   font-family: Playfair Display;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 1.5;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
   overflow-x: hidden;
 }
 
@@ -717,6 +717,37 @@ body {
   left: auto;
   z-index: 2;
   padding-left: 40px;
+}
+
+.overlay {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 61.2%;
+  left: auto;
+  background-color: rgba(0, 0, 0, 0.322);
+  overflow: hidden;
+  width: 360px;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .wraper3 {
@@ -892,12 +923,12 @@ body {
   font-weight: 200;
   line-height: 1.5;
   overflow-x: hidden;
-  margin-right: 6%;
+  margin-right: 5%;
 }
 .footer-row ul li {
   list-style-type: none;
   display: inline;
-  margin-right: 5px;
+  margin-right: 4px;
   -webkit-font-smoothing: antialiased;
   font-family: Source Sans Pro;
   font-size: 14px;
@@ -908,6 +939,55 @@ body {
 
 #last-icone:hover {
   background-color: #6fb586;
+}
+
+.slider {
+  width: 300px;
+  height: 200px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#itemse {
+  width: 10000px;
+  height: auto;
+  position: relative;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: -300px;
+}
+
+#itemse.shifting {
+  transition: left 0.2s ease-out;
+}
+
+.slide {
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  transition: all 1s;
 }
 
 /*# sourceMappingURL=main.css.map */
