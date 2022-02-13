@@ -4,13 +4,12 @@
     width:$width;
     height:$height
 }
-@mixin display-flex($display,$align:center){
+@mixin display-flex($display,$align:center,$wrap:wrap,$content: space-around){
     display: flex;
     flex-direction: $display;
-    justify-content: space-around;  
+    justify-content:$content;  
     align-items: $align;
-    flex-wrap: wrap;
-    text-align: center
+    flex-wrap:$wrap;
 }
 @mixin list-style($style-type){
     list-style-type:$style-type;
