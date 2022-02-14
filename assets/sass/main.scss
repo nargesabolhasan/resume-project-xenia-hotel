@@ -116,7 +116,7 @@ body{
     @include position(absolute,-60px,30%,auto,auto);
 }
 .h3{
-    margin:v.$standard-margin;
+    margin:20px 0px;
     @include font-style(v.$font-f1,20px,700,1.1);
 }
 .h4{
@@ -124,7 +124,7 @@ body{
     margin:v.$standard-margin;
 }
 .h6{
-    @include font-style(v.$font-Stext,13px,300,1.5);
+    @include font-style(v.$font-Stext,15px,300,1.5);
     
 }
 .p{
@@ -215,40 +215,117 @@ body{
 }
 
 //------******Secound carousel******--------
-.Secound-slide-show{
-    @include width-height(100%,600px); 
-    overflow: hidden;
-    padding:96px 367px;
-    .slide-holder{
-        @include width-height(100%,100%);
-        @include display-flex(row,center,nowrap);
-        color: white;
-        margin:v.$center;
-        text-align:start;
-        overflow: hidden;
-
-        
-
+.Secound-slide-show {
+    @include width-height(100%,662px);
+    padding:96px 0px;
+    .slider2-widget {
+        @include position(relative);
+        @include width-height(1150px,385px);
+         overflow: hidden;
+        z-index: 1;
+        margin: v.$center;
+      }
+  }
+  .slide-holder {
+    @include width-height(10000px);
+    @include position(relative,0,auto,auto,auto);
+  }
+  #holder.shifting {
+    transition: left .2s ease-out;
+  }
+  .item-slide-show {
+    @include display-flex(row,center,nowrap,space-between);
+    @include width-height(1150px,385px);
+    cursor: pointer;
+    float: left;
+    @include position(relative);
+    transition: all 1s;
+    text-align: start;
+    img{
+        @include width-height(50%,100%);
     }
-    .item-slide-show{
-         flex:1 0 100%;
-        @include width-height(100%);
-        
-        
-        
-        img{
-            @include img-style;
-            @include width-height(50%);
-            float: right;
+    .caption-slide-show{
+        padding-left: 18px;
+        h1{
+            margin:0px;
+        }
+        p{
+            margin-bottom: 50px ;
+            margin-top: v.$standard-margin;
+            @include font-style(v.$font-Stext,16px,100, 1.5);
+        }
+        i{
+            border-radius: 50%;
+            padding:18px;
+            margin-right:10px;
+        }
+     }
+}
 
-        }
-        #caption-slide-show{
-            padding:48px 22px;
-        }
-        
+.read-more{ 
+    text-decoration: none; 
+    @include font-style(v.$font-Stext,13px,200, 1.5);
+    &:after {
+        content: '';
+        display: block;
+        @include width-height(0,2px);
+        background: map-get(v.$color-pallet,"green");
+        transition: width .3s;
+    }
+    &:hover:after {
+        width: 70px;
+        //transition: width .3s;
     }
 }
 
+  
+
+//------******last carousel******--------
+.slider {
+    @include width-height(750px,248px);
+    margin:v.$center;
+    .carousel-wrapper {
+        @include position(relative);
+        @include width-height(100%);
+        overflow: hidden;
+        z-index: 1;
+      }
+  }
+  #itemse {
+    @include width-height(10000px);
+    @include position(relative,0,auto,auto,auto);
+  }
+  #itemse.shifting {
+    transition: left .2s ease-out;
+  }
+  .slide {
+    @include display-flex(row);
+    @include width-height(750px,248px);
+    cursor: pointer;
+    float: left;
+    @include position(relative);
+    transition: all 1s;
+    text-align: start;
+    img{
+        @include width-height(100px,100px);
+        border-radius: 50%;
+    }
+  }
+  .text-wraper{
+    @include display-flex(column,flex-start); 
+    p{
+        @include font-style(v.$font-f1,20px,200,1.5);
+    }
+    .testimonial_author_role{
+        font-style: italic;
+        @include font-style(v.$font-Stext,15px,200,1.5);
+    }
+    .testimonial_author{
+        @include font-style(v.$font-Stext,16px,500,1.5);
+
+    }
+  }
+  
 //------******footer******--------
 .footer-wraper{
     @include width-height(100%,300px); 
@@ -283,7 +360,8 @@ body{
 .a {
     text-decoration: none ;
     &:hover{
-        color:map-get(v.$color-pallet,"green")
+        color:map-get(v.$color-pallet,"green");
+        
     }
 }
 
@@ -315,31 +393,6 @@ body{
 }
 
 
-
-.slider {
-    @include width-height(300px,200px);
-  }
-  .carousel-wrapper {
-    @include position(relative);
-    @include width-height(100%);
-    overflow: hidden;
-    z-index: 1;
-  }
-  #itemse {
-    @include width-height(10000px);
-    @include position(relative,0,auto,auto,-300px);
-  }
-  #itemse.shifting {
-    transition: left .2s ease-out;
-  }
-  .slide {
-    @include width-height(300px,200px);
-    cursor: pointer;
-    float: left;
-    @include display-flex(column);
-    @include position(relative);
-    transition: all 1s;
-  }
 
 
 
