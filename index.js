@@ -154,3 +154,19 @@ function slide(wrapper, items) {
     allowShift = true;
   }
 }
+
+
+
+// @mixin card($content){
+//   @include display-flex(column,flex-start);
+//   padding:0px 15px;
+//   &::before{
+//       content:$content;
+//       @include width-height(10%,16px);
+//       @include img-style;
+//       @include position(relative,20px);
+//       z-index: 2;
+//       padding-left:40px;
+//   }
+
+// }

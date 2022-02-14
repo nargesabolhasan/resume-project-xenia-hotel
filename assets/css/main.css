@@ -624,7 +624,7 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 100px;
+  margin-top: 50px;
   z-index: 3;
 }
 .main-gallory img {
@@ -661,16 +661,20 @@ body {
   padding: 0px 15px;
 }
 .main-gallory #card-image-1::before {
-  content: url("../images/logo_gym.webp");
-  width: 33px;
-  height: 16px;
+  content: "";
+  background-image: url("../images/logo_spa.webp");
+  width: 120px;
+  height: 54px;
   object-position: center center;
   object-fit: cover;
   position: relative;
-  top: 20px;
+  top: 70px;
   right: auto;
   bottom: auto;
-  left: auto;
+  left: 30px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 2;
   padding-left: 40px;
 }
@@ -683,16 +687,20 @@ body {
   padding: 0px 15px;
 }
 .main-gallory #card-image-2::before {
-  content: url("../images/logo_spa.webp");
-  width: 33px;
-  height: 16px;
+  content: "";
+  background-image: url("../images/logo_gym.webp");
+  width: 120px;
+  height: 54px;
   object-position: center center;
   object-fit: cover;
   position: relative;
-  top: 20px;
+  top: 70px;
   right: auto;
   bottom: auto;
-  left: auto;
+  left: 30px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 2;
   padding-left: 40px;
 }
@@ -705,16 +713,20 @@ body {
   padding: 0px 15px;
 }
 .main-gallory #card-image-3::before {
-  content: url("../images/logo_restaurant.webp");
-  width: 33px;
-  height: 16px;
+  content: "";
+  background-image: url("../images/logo_restaurant.webp");
+  width: 120px;
+  height: 54px;
   object-position: center center;
   object-fit: cover;
   position: relative;
-  top: 20px;
+  top: 70px;
   right: auto;
   bottom: auto;
-  left: auto;
+  left: 30px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 2;
   padding-left: 40px;
 }
@@ -723,7 +735,7 @@ body {
   position: absolute;
   top: auto;
   right: auto;
-  bottom: 61.2%;
+  bottom: 60%;
   left: auto;
   background-color: rgba(0, 0, 0, 0.322);
   overflow: hidden;

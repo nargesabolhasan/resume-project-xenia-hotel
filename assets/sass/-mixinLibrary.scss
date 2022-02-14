@@ -25,6 +25,11 @@
     object-position: center center;
     object-fit: cover;
 }
+@mixin background{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 @mixin carousel-style{
     @include img-style;
@@ -91,18 +96,17 @@ overflow-x:hidden;
         @include display-flex(column,flex-start);
         padding:0px 15px;
         &::before{
-            content:$content;
-            @include width-height(33px,16px);
+            content:"";
+            background-image: $content;
+            @include width-height(120px,54px);
             @include img-style;
-            @include position(relative,20px);
+             @include position(relative,70px,auto,auto,30px);
+           
+            @include background;
             z-index: 2;
             padding-left:40px;
         }
     
 }
-@mixin background{
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 

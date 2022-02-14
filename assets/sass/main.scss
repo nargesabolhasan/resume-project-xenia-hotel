@@ -142,7 +142,7 @@ body{
 //------******cards******--------
 .main-gallory{
     @include display-flex(row);
-    margin-top:100px;
+    margin-top:50px;
     z-index:3;
     img{
         @include img-style;
@@ -155,19 +155,20 @@ body{
         z-index: 3; 
     }
     #card-image-1{
-        @include card(url('../images/logo_gym.webp'));
+         @include card(url('../images/logo_spa.webp'));
+        
     }
     #card-image-2{
-        @include card(url('../images/logo_spa.webp'));
+         @include card(url('../images/logo_gym.webp'));
     }
     #card-image-3{
-        @include card(url('../images/logo_restaurant.webp'));
+         @include card(url('../images/logo_restaurant.webp'));
     }
 
 }
 
 .overlay {
-    @include position(absolute,auto,auto,61.2%,auto);
+    @include position(absolute,auto,auto,60%,auto);
     background-color:map-get(v.$color-pallet,"black-opa");
     overflow: hidden;
     width: 360px;
