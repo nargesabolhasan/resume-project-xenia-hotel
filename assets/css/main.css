@@ -322,12 +322,7 @@ body {
 
 .wraper {
   width: 100%;
-  height: 700px;
-  position: relative;
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
+  height: 500px;
 }
 
 .navBar {
@@ -425,16 +420,9 @@ body {
 }
 
 .first-slide-show .carousel-inner {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  left: 0%;
   z-index: -1;
 }
-.first-slide-show .carousel-img {
+.first-slide-show .carousel-inner .carousel-img {
   object-position: center center;
   object-fit: cover;
   width: 100%;
@@ -444,6 +432,8 @@ body {
   right: 0%;
   bottom: 0%;
   left: 0%;
+  width: 100vw;
+  height: 700px;
 }
 
 #carousel-prev {
@@ -476,14 +466,21 @@ body {
   opacity: 1;
 }
 
+.date-box-wraper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  transform: translateY(150px);
+  width: auto;
+  height: auto;
+}
+
 .date-box {
   width: 1170px;
   height: 284px;
-  position: relative;
-  top: 75%;
-  right: auto;
-  bottom: auto;
-  left: 20%;
+  z-index: 99;
 }
 .date-box .btn-holder {
   width: 780px;
@@ -562,8 +559,12 @@ body {
 }
 
 .text-box {
-  padding: 0px 240px;
   margin: 0 auto;
+  width: auto;
+  height: 400px;
+}
+.text-box .providing-holder {
+  transform: translateY(-200px);
 }
 
 .h1 {
@@ -586,11 +587,7 @@ body {
   line-height: 1;
   overflow-x: hidden;
   opacity: 8%;
-  position: absolute;
-  top: -60px;
-  right: 30%;
-  bottom: auto;
-  left: auto;
+  transform: translateY(-100px);
 }
 
 .h3 {
@@ -648,7 +645,7 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 100px;
   z-index: 3;
 }
 .main-gallory img {
@@ -759,13 +756,18 @@ body {
   position: absolute;
   top: auto;
   right: auto;
-  bottom: 60%;
+  bottom: 66%;
   left: auto;
   background-color: rgba(0, 0, 0, 0.322);
   overflow: hidden;
   width: 360px;
   height: 0;
   transition: 0.5s ease;
+  z-index: 44;
+}
+
+.card:hover .overlay {
+  height: 540px;
 }
 
 .text {
@@ -773,17 +775,14 @@ body {
   top: 50%;
   right: auto;
   bottom: auto;
-  left: 50%;
+  left: 10%;
   -webkit-font-smoothing: antialiased;
   font-family: Source Sans Pro;
   font-size: 18px;
-  font-weight: 200;
-  line-height: 1.5;
+  font-weight: 100;
+  line-height: 1.7;
   overflow-x: hidden;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+  text-align: start;
 }
 
 .wraper3 {
@@ -853,6 +852,7 @@ body {
   width: 100%;
   height: 662px;
   padding: 96px 0px;
+  margin-bottom: 100px;
 }
 .Secound-slide-show .slider2-widget {
   position: relative;
@@ -944,6 +944,15 @@ body {
 }
 .read-more:hover:after {
   width: 70px;
+}
+
+.fa-circle {
+  font-size: 11px;
+  margin-right: 10px;
+  opacity: 0.5;
+}
+.fa-circle:hover {
+  opacity: 1;
 }
 
 .slider {
@@ -1050,7 +1059,6 @@ body {
 .footer-wraper .footer-widget span {
   height: 22px;
   margin-top: 30px;
-  margin-bottom: 60px;
 }
 
 .footer-info-holder {
@@ -1109,7 +1117,6 @@ body {
   font-weight: 200;
   line-height: 1.5;
   overflow-x: hidden;
-  margin-right: 5%;
 }
 .footer-row ul li {
   list-style-type: none;
@@ -1121,10 +1128,67 @@ body {
   font-weight: 100;
   line-height: 1.1;
   overflow-x: hidden;
+  overflow: wrap;
 }
 
 #last-icone:hover {
   background-color: #6fb586;
+}
+
+.slider2-widget {
+  width: 940px;
+  height: 409px;
+  overflow: hidden;
+}
+.slider2-widget .item-slide-show {
+  width: 940px;
+  height: 409px;
+}
+
+.slide-holder {
+  width: 940px;
+  height: 409px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.date-box {
+  width: 970px;
+  height: 283px;
+}
+
+.main-gallory img {
+  width: 293px;
+  height: 439px;
+}
+
+.overlay {
+  width: 293px;
+  height: 0px;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 68%;
+  left: auto;
+}
+
+.card:hover .overlay {
+  height: 439px;
+}
+
+.text {
+  position: absolute;
+  top: 45%;
+  right: auto;
+  bottom: auto;
+  left: 10%;
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 15px;
+  font-weight: 100;
+  line-height: 1.7;
+  overflow-x: hidden;
+  text-align: start;
 }
 
 /*# sourceMappingURL=main.css.map */

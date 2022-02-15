@@ -2,14 +2,12 @@
 //map-get(v.$color-pallet,"success")
 $(document).ready(function () {
     $(".card").mouseenter(function (e) {
-        $(this).find(".overlay").css("height", " 540px");
         $(this).find(".card-footer").animate({
             opacity: 0,
             bottom: 200
         }, 100, "linear");
     })
     $(".card").mouseleave(function (e) {
-        $(this).find(".overlay").css("height", "0px");
         $(this).find(".card-footer").animate({
             opacity: 1,
             bottom: 60
@@ -252,6 +250,23 @@ function slide(wrapper, items) {
     allowShift = true;
   }
 }
+
+//contorol buttons:
+function contorolButton(e){
+  const corent_button=e.target
+  let arr= document.querySelectorAll('.fa-circle'),
+  slide = document.querySelectorAll('.slide'),
+  slide_width=slide[0].offsetWidth,
+  sliderItems = document.getElementById('itemse'),
+  posInitial = sliderItems.offsetLeft;
+  for(let i=0;i<arr.length;i++) {
+    if(corent_button===arr[i]){
+
+      console.log(posInitial)
+    }
+  }    
+} // console.log(arr)
+  
 
 
 

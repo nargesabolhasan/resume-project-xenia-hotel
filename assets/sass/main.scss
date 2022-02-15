@@ -11,8 +11,8 @@ body{
 };
 //----------------wraper1-----------------------
 .wraper{    
-    @include width-height(100%,700px);
-    @include position(relative);
+    @include width-height(100%,500px);
+    // @include position(relative);
 }
 //------******navBar******--------
 .navBar{
@@ -47,13 +47,13 @@ body{
 //------******carousel******--------
 .first-slide-show{
     .carousel-inner{  
-     @include width-height(100%,100%);
-     @include position(absolute,0%,0%,0%,0%);
-     z-index: -1;
-    }
-    .carousel-img{
-        @include  carousel-style;
-    }
+        // @include width-height(100%,500px);
+        z-index: -1;
+        .carousel-img{
+            @include  carousel-style;
+            @include width-height(100vw,700px);
+        }
+    } 
 }
 #carousel-prev{
     @include width-height(44px,50px);
@@ -69,9 +69,14 @@ body{
   
 }
 //------******date-box******--------
+.date-box-wraper{
+    @include display-flex(row);
+    transform:translateY(150px);
+    @include width-height(auto,auto);
+}
 .date-box{
     @include width-height(1170px,284px);
-    @include position(relative,75%,auto,auto,20%);
+    z-index: 99;
     .btn-holder{
         @include width-height(780px,100%);
         @include display-flex(row);
@@ -100,20 +105,26 @@ body{
     @include display-flex(column);
     text-align:center;
 }
+
 .text-box{
-    padding:0px 240px;
+    // padding:0px 240px;
     margin:v.$center;
+    @include width-height(auto,400px);
+    .providing-holder{
+        transform: translateY(-200px);
+    }
 }
 .h1{
     margin-bottom: 20px ;
     @include font-style(v.$font-f1,40px,700,1.1);
 }
-
 .h2{
     @include width-height(auto,150px);
     @include font-style(v.$font-f1,140px,200,1);
     opacity:8%;
-    @include position(absolute,-60px,30%,auto,auto);
+    transform:translateY(-100px) ;
+  
+    // @include position(absolute,-60px,20%,auto,auto);
 }
 .h3{
     margin:20px 0px;
@@ -142,12 +153,13 @@ body{
 //------******cards******--------
 .main-gallory{
     @include display-flex(row);
-    margin-top:50px;
+    margin-top:100px;
     z-index:3;
     img{
         @include img-style;
         @include position(relative,0%,0%,0%,0%);
         @include width-height(360px,540px);
+        
     }
     .card-footer{
         @include font-style(v.$font-f1,30px,700,1.1);
@@ -156,7 +168,6 @@ body{
     }
     #card-image-1{
          @include card(url('../images/logo_spa.webp'));
-        
     }
     #card-image-2{
          @include card(url('../images/logo_gym.webp'));
@@ -168,27 +179,25 @@ body{
 }
 
 .overlay {
-    @include position(absolute,auto,auto,60%,auto);
+    @include position(absolute,auto,auto,66%,auto);
     background-color:map-get(v.$color-pallet,"black-opa");
     overflow: hidden;
-    width: 360px;
-    height: 0;
+    @include width-height(360px,0);
     transition: .5s ease;
-  }
-  
-  .text {
-    @include position(absolute,50%,auto,auto,50%);
-    @include font-style(v.$font-Stext,18px,200,1.5);
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+    z-index: 44;
+}
+.card:hover .overlay {
+    height:540px
+}
+.text {
+    @include position(absolute,50%,auto,auto,10%);
+    @include font-style(v.$font-Stext,18px,100,1.7);
+    text-align: start;
+}
 //---------------------wraper3----------------------------
 .wraper3{
     @include width-height(100%);
     transform: translateY(-120px);
- 
 }
 //------******off box******--------
 .main-off{
@@ -218,6 +227,7 @@ body{
 .Secound-slide-show {
     @include width-height(100%,662px);
     padding:96px 0px;
+    margin-bottom: 100px;
     .slider2-widget {
         @include position(relative);
         @include width-height(1150px,385px);
@@ -261,7 +271,6 @@ body{
         }
      }
 }
-
 .read-more{ 
     text-decoration: none; 
     @include font-style(v.$font-Stext,13px,200, 1.5);
@@ -277,7 +286,14 @@ body{
         //transition: width .3s;
     }
 }
-
+.fa-circle{
+    font-size:11px;
+    margin-right: 10px;
+    opacity: 0.5;
+    &:hover{
+        opacity: 1; 
+    }
+}
   
 
 //------******last carousel******--------
@@ -336,7 +352,7 @@ body{
         span{
             height:22px;
             margin-top:30px;
-            margin-bottom:60px;
+            // margin-bottom:60px;
         }  
     }
 }
@@ -375,7 +391,7 @@ body{
     }
     p{
         @include font-style(v.$font-Stext,14px,200,1.5);
-        margin-right:5%;
+        // margin-right:5%;
      }
     ul {
         li{
@@ -383,6 +399,7 @@ body{
         display: inline;
         margin-right: 4px;
         @include font-style(v.$font-Stext,14px,100,1.1);
+        overflow:wrap;
         }
     }
 }
@@ -392,7 +409,61 @@ body{
     }
 }
 
+//--------------responsive display---------------------------
+.wraper3{
 
+}
+//carousel2:
+.slider2-widget{
+  
+    @include width-height(940px,409px);
+    overflow: hidden;
+    
+    .item-slide-show {
 
+            @include width-height(940px,409px);
+            }
+    
+}
 
+.slide-holder {
+    
+        @include width-height(940px,409px);
+        margin: v.$center;
+        overflow: hidden;
+    
+}
+//date box
+.date-box{
+   
+        @include width-height(970px,283px);
+    
+}
+//cards
+.main-gallory{
+    img{
+       
+            @include width-height(293px,439px);
+        
+    }
+}
+
+.overlay {
+
+       @include width-height(293px,0px);
+       @include position(absolute,auto,auto,68%,auto);
+
+}    
+.card:hover .overlay {
+
+        height:439px ;
+
+}
+.text {
+
+        @include position(absolute,45%,auto,auto,10%);
+        @include font-style(v.$font-Stext,15px,100,1.7);
+        text-align: start;
+
+}
 

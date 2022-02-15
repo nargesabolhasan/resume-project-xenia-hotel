@@ -100,13 +100,26 @@ overflow-x:hidden;
             background-image: $content;
             @include width-height(120px,54px);
             @include img-style;
-             @include position(relative,70px,auto,auto,30px);
-           
+            @include position(relative,70px,auto,auto,30px);
             @include background;
             z-index: 2;
             padding-left:40px;
         }
     
 }
+
+// @mixin respond ($breakpoint) {
+//     @if $breakpoint==tablet {
+//     @media only screen and (max-width: 1187px) {
+//       @content;
+//     }
+//   }
+
+//   @if $breakpoint==mobile {
+//     @media only screen and (max-width: 480px) {
+//       @content;
+//     }
+//   }
+// }
 
 
