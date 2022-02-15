@@ -419,9 +419,6 @@ body {
   height: 100%;
 }
 
-.first-slide-show .carousel-inner {
-  z-index: -1;
-}
 .first-slide-show .carousel-inner .carousel-img {
   object-position: center center;
   object-fit: cover;
@@ -432,7 +429,7 @@ body {
   right: 0%;
   bottom: 0%;
   left: 0%;
-  width: 100vw;
+  width: 100%;
   height: 700px;
 }
 
@@ -472,18 +469,23 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  transform: translateY(150px);
+  position: relative;
+  top: 150px;
+  right: auto;
+  bottom: auto;
+  left: auto;
   width: auto;
   height: auto;
+  margin: 0 auto;
 }
 
 .date-box {
-  width: 1170px;
+  width: 1300px;
   height: 284px;
   z-index: 99;
 }
 .date-box .btn-holder {
-  width: 780px;
+  width: 1200px;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -493,13 +495,24 @@ body {
   margin: 0 auto;
   text-align: center;
   padding-top: 20px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 .date-box .btn-date {
   width: 360px;
   height: 97px;
   padding: 28px 24px;
-  font-size: 20px;
   margin-top: 20px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 .date-box .green-button {
   padding: 12px 32px;
@@ -559,7 +572,6 @@ body {
 }
 
 .text-box {
-  margin: 0 auto;
   width: auto;
   height: 400px;
 }
@@ -587,7 +599,7 @@ body {
   line-height: 1;
   overflow-x: hidden;
   opacity: 8%;
-  transform: translateY(-100px);
+  transform: translateY(100px);
 }
 
 .h3 {
@@ -849,6 +861,11 @@ body {
 }
 
 .Secound-slide-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   height: 662px;
   padding: 96px 0px;
@@ -864,7 +881,6 @@ body {
   height: 385px;
   overflow: hidden;
   z-index: 1;
-  margin: 0 auto;
 }
 
 .slide-holder {
@@ -1135,60 +1151,244 @@ body {
   background-color: #6fb586;
 }
 
-.slider2-widget {
-  width: 940px;
-  height: 409px;
-  overflow: hidden;
-}
-.slider2-widget .item-slide-show {
-  width: 940px;
-  height: 409px;
-}
+@media only screen and (max-width: 1324px) {
+  .date-box {
+    width: 870px;
+    height: 350px;
+    flex-wrap: wrap;
+    overflow: wrap;
+  }
+  .date-box .btn-date {
+    width: 200px;
+    height: 97px;
+    padding: 10px 20px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  .date-box .btn-holder {
+    width: 750px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
 
-.slide-holder {
-  width: 940px;
-  height: 409px;
-  margin: 0 auto;
-  overflow: hidden;
-}
+  .Secound-slide-show {
+    padding: 0 150px;
+  }
 
-.date-box {
-  width: 970px;
-  height: 283px;
-}
+  .slider2-widget {
+    width: 1000px;
+    height: 409px;
+    overflow: hidden;
+  }
+  .slider2-widget .item-slide-show {
+    width: 1000px;
+    height: 409px;
+  }
+  .slider2-widget .item-slide-show img {
+    object-position: center center;
+    object-fit: cover;
+  }
 
-.main-gallory img {
-  width: 293px;
-  height: 439px;
-}
+  .slide-holder {
+    margin: 0 auto;
+    overflow: hidden;
+  }
 
-.overlay {
-  width: 293px;
-  height: 0px;
-  position: absolute;
-  top: auto;
-  right: auto;
-  bottom: 68%;
-  left: auto;
-}
+  .main-gallory img {
+    width: 293px;
+    height: 439px;
+  }
 
-.card:hover .overlay {
-  height: 439px;
-}
+  .overlay {
+    width: 293px;
+    height: 0px;
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 68%;
+    left: auto;
+  }
 
-.text {
-  position: absolute;
-  top: 45%;
-  right: auto;
-  bottom: auto;
-  left: 10%;
-  -webkit-font-smoothing: antialiased;
-  font-family: Source Sans Pro;
-  font-size: 15px;
-  font-weight: 100;
-  line-height: 1.7;
-  overflow-x: hidden;
-  text-align: start;
+  .card:hover .overlay {
+    height: 439px;
+  }
+
+  .text {
+    position: absolute;
+    top: 45%;
+    right: auto;
+    bottom: auto;
+    left: 10%;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 1.7;
+    overflow-x: hidden;
+    text-align: start;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .center-nav-item {
+    display: none;
+  }
+
+  .date-box {
+    width: 750px;
+    height: 350px;
+    flex-wrap: wrap;
+    overflow: wrap;
+  }
+  .date-box .btn-date {
+    width: 200px;
+    height: 97px;
+    padding: 10px 20px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  .date-box .btn-holder {
+    width: 730px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  .Secound-slide-show {
+    padding: 0 105px;
+  }
+
+  .slider2-widget {
+    width: 750px;
+    height: 455px;
+    overflow: hidden;
+  }
+  .slider2-widget .item-slide-show {
+    width: 750px;
+    height: 455px;
+  }
+  .slider2-widget .item-slide-show img {
+    object-position: center center;
+    object-fit: cover;
+  }
+
+  .slide-holder {
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .main-gallory img {
+    width: 220px;
+    height: 330px;
+  }
+
+  .overlay {
+    width: 220px;
+    height: 0px;
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 70.5%;
+    left: auto;
+  }
+
+  .card:hover .overlay {
+    height: 330px;
+  }
+
+  .text {
+    position: absolute;
+    top: 30%;
+    right: auto;
+    bottom: auto;
+    left: 10%;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 13px;
+    font-weight: 100;
+    line-height: 1.5;
+    overflow-x: hidden;
+    text-align: start;
+  }
+}
+@media only screen and (max-width: 764px) {
+  .center-nav-item {
+    display: none;
+  }
+
+  .date-box {
+    width: 764px;
+    height: 750px;
+    flex-wrap: wrap;
+    overflow: wrap;
+  }
+  .date-box .btn-holder {
+    width: 750px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  .date-box .btn-date {
+    width: 730px;
+    height: 159px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  .slide-holder {
+    width: 720px;
+    height: 455px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
