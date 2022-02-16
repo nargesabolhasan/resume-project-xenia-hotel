@@ -1,5 +1,3 @@
-
-//map-get(v.$color-pallet,"success")
 $(document).ready(function () {
     $(".card").mouseenter(function (e) {
         $(this).find(".card-footer").animate({
@@ -14,29 +12,17 @@ $(document).ready(function () {
         }, 300, "linear");
     })
 })
+//-------------menu-----------------------
+// $("#js-hamburger").click(function () {
+//   $("#js-top-line").toggleClass("active");
+//   $("#js-center-line").toggleClass("active");
+//   $("#js-bottom-line").toggleClass("active");
+//   $("#js-nav").toggleClass("show");
+// });
 
-//pure js carousel 2:
-// setTimeout(nextAutomate,2000)
 
-// $("#hi").click(function () {
-//   let carousel=$("#carousel2")
-//   let index=$(carousel).find('.item-slide-show.active').index()
-//   let content=$(carousel).find('#holder')
-//   const length_item=$(carousel).find('.item-slide-show').length
-//   if(index<length_item-1){
-//     console.log(length_item)
-//      $('.item-slide-show.active').css('trasform',`translateY(100px)`)
-//     //  $(carousel).find('.item-slide-show.active').removeClass('.active')
-//     //${(index+1)*100}%   $(carousel).find('.item-slide-show').eq(index+1).addClass('.active')
-  
-//    }
-//    console.log(length_item)
-// })
 
-  // const carousel=document.getElementById('carousel2')
-  // let active=carousel.closest('.active')
-  // const lenght=carousel.find('.item-slide-show')
-  // pure js carousel 2:
+//---------pure js carousel 2--------------------
   var slider1 = document.getElementById('carousel2'),
     sliderItems1 = document.getElementById('holder');
     slide1(slider1, sliderItems1);
@@ -143,7 +129,7 @@ $(document).ready(function () {
     }
   }
 
-// pure js carousel 3:
+//------------ pure js carousel 3---------------------
 
 var slider = document.getElementById('slider'),
     sliderItems = document.getElementById('itemse');
@@ -251,7 +237,7 @@ function slide(wrapper, items) {
   }
 }
 
-//contorol buttons:
+//-----------------contorol buttons-----------------
 function contorolButton(e){
   const corent_button=e.target
   let arr= document.querySelectorAll('.fa-circle'),

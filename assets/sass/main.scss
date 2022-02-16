@@ -44,6 +44,9 @@ body{
     map-get(v.$color-pallet,"light-gray"),
     map-get(v.$color-pallet,"dark-yellow"));
 };
+//------******menu******--------
+
+
 //------******carousel******--------
 .first-slide-show{
     .carousel-inner{  
@@ -357,6 +360,9 @@ body{
 .footer-info-holder{
     @include display-flex(row);
     padding-top:28px;
+    span{
+        margin: v.$center;
+    }
     .footer-info{
         margin-right:50px;
          @include display-flex(row);
@@ -496,13 +502,13 @@ body{
 
     //carousel2:
     .Secound-slide-show {
-        padding:0 105px;
+        padding:0 110px;
      }
     .slider2-widget{
-         @include width-height(750px,455px);
+         @include width-height(760px,455px);
         overflow: hidden;
         .item-slide-show {
-            @include width-height(750px,455px);
+            @include width-height(760px,455px);
          img{
                 @include img-style ;
             }
@@ -559,12 +565,38 @@ body{
     
     }
 
-    .slide-holder {
-        @include width-height(720px,455px);
-        margin: v.$center;
-        overflow: hidden;
-    }
+   
 
+    //cards
+    //footer
+    .footer-widget{
+        padding-left:16px;
+    }
+    .footer-info-holder{
+        @include display-flex(row);
+        padding-top:28px;
+        span{
+            margin: v.$center;
+        }
+        .footer-info{
+            // margin-right:50px;
+             @include display-flex(row);
+             @include font-style(v.$font-Stext,15px,100,1.5);
+             i{
+                 border-radius: 50%;
+                 padding:10px;
+             }
+             
+         }
+    
+    }
+    .footer-row{
+        @include display-flex(column);
+       img{
+           @include width-height(120px);
+           margin: v.$center;
+       }
+    }
 
 }
 
