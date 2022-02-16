@@ -439,13 +439,15 @@ body {
 }
 
 .menu {
-  top: 0;
-  right: 0;
-  width: 40%;
-  /* 100% = fullscreen */
+  position: fixed;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  left: 100vw;
+  z-index: 99;
+  width: 320px;
   height: 100vh;
-  transition: transform 0.7s, opacity 1s;
-  transform: translateX(100%);
+  float: right;
 }
 .menu #menu-inner {
   margin: 0 30px;

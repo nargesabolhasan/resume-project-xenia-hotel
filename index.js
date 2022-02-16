@@ -26,8 +26,7 @@ $(document).ready(function () {
     });
     $('.menu').css({
       position: 'fixed',
-      opacity:1,
-      width: '320px',
+      left:'82.5vw',
       transition: "all .5s"
     });
      //shift page to left

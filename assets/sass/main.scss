@@ -45,19 +45,10 @@ body{
 };
 //------******menu******--------
 .menu{
-    // @include position(fixed,);
-    // z-index: 99;
-    // @include width-height(0px,100vh);
-    // transform: translateY(-3620px);
-    // opacity: 1;
-    // overflow: hidden;
-        // position: fixed;
-    top: 0;
-    right: 0;
-    width: 40%; /* 100% = fullscreen */
-    height: 100vh;
-    transition: transform 0.7s, opacity 1s;
-    transform: translateX(100%);
+    @include position(fixed,0px,auto,auto,100vw);
+    z-index: 99;
+    @include width-height(320px,100vh);
+    float:right;
     #menu-inner{
         margin:0 30px;
         padding-bottom: 30px;
