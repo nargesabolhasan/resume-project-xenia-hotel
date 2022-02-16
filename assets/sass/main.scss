@@ -1,6 +1,7 @@
 @use '-variable' as v;
 @import '-mixinLibrary';
 
+
 *,*::after,*::before{
     margin: 0%;
     padding: 0%;
@@ -9,17 +10,15 @@
 body{
     box-sizing:border-box;
 };
-//----------------wraper1-----------------------
-.wraper{    
-    @include width-height(100%,500px);
-    // @include position(relative);
-}
+//----------------container-----------------------
 //------******navBar******--------
 .navBar{
     @include display-flex(row);
     @include width-height(100%,100px);
     @include position(relative);
     z-index: 9;
+ 
+
 };
 
 .ul-style-nav{
@@ -45,8 +44,62 @@ body{
     map-get(v.$color-pallet,"dark-yellow"));
 };
 //------******menu******--------
-
-
+.menu{
+    // @include position(fixed,);
+    // z-index: 99;
+    // @include width-height(0px,100vh);
+    // transform: translateY(-3620px);
+    // opacity: 1;
+    // overflow: hidden;
+        // position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%; /* 100% = fullscreen */
+    height: 100vh;
+    transition: transform 0.7s, opacity 1s;
+    transform: translateX(100%);
+    #menu-inner{
+        margin:0 30px;
+        padding-bottom: 30px;
+    }
+    .menu-item{
+        .sub-menu{
+            border-left:1px solid map-get(v.$color-pallet,"light-gray");
+            padding-left:10px; 
+            .sub-inner {
+                padding:5px 0; 
+                a{
+                    @include font-style(v.$font-Stext,14px,300,1.5);
+                    color:map-get(v.$color-pallet,"light-gray")
+                }
+                
+            }
+        }
+    }
+}
+.title-item {
+    padding: 10px 0;
+    @include font-style(v.$font-Stext,16px,700,1.5);
+    color:map-get(v.$color-pallet,"light-gray")  
+}
+.info-menu{
+    margin:0 30px;
+    border-top: 0.5px solid map-get(v.$color-pallet,"light-gray") ;
+    p{
+        @include font-style(v.$font-Stext,14px,50,1.7);
+        padding: 30px 0;
+    }
+    .icon-holder-menu{
+        i{
+            margin-right: 10px;
+        }
+        @include font-style(v.$font-Stext,16px,200,1.5);
+        padding: 10px 0,
+    }
+}
+.menu-widget{
+    transform: translate(120px,0px);
+}
 //------******carousel******--------
 .first-slide-show{
     .carousel-inner{  
@@ -74,7 +127,7 @@ body{
 //------******date-box******--------
 .date-box-wraper{
     @include display-flex(row);
-    @include position(relative,150px);
+    @include position(relative,550px);
     @include width-height(auto,auto);
     margin: v.$center;
 }
@@ -106,7 +159,7 @@ body{
 .wraper2{
     // @include position(relative,280px,auto,auto,0%);
     @include width-height(100%);
-    transform: translateY(280px);
+    transform: translateY(680px);
     @include display-flex(column);
     text-align:center;
 }
@@ -269,22 +322,13 @@ body{
             padding:18px;
             margin-right:10px;
         }
+        a{
+          @include font-style(v.$font-Stext,13px,200, 1.5);
+        }
      }
 }
-.read-more{ 
-    text-decoration: none; 
-    @include font-style(v.$font-Stext,13px,200, 1.5);
-    &:after {
-        content: '';
-        display: block;
-        @include width-height(0,2px);
-        background: map-get(v.$color-pallet,"green");
-        transition: width .3s;
-    }
-    &:hover:after {
-        width: 70px;
-        //transition: width .3s;
-    }
+.a-holder{
+    @include border-bottom-anime;
 }
 .fa-circle{
     font-size:11px;
@@ -294,8 +338,6 @@ body{
         opacity: 1; 
     }
 }
-  
-
 //------******last carousel******--------
 .slider {
     @include width-height(750px,248px);
@@ -345,7 +387,7 @@ body{
 //------******footer******--------
 .footer-wraper{
     @include width-height(100%,300px); 
-    transform:translateY(100px);
+    transform:translateY(150px);
     padding-top:48px;
     .footer-widget{
         @include display-flex(column); 
@@ -393,8 +435,8 @@ body{
         margin: v.$center;
     }
     p{
-        @include font-style(v.$font-Stext,14px,200,1.5);
-        // margin-right:5%;
+        @include phone-number;
+        
      }
     ul {
         li{
@@ -565,7 +607,6 @@ body{
     
     }
 
-   
 
     //cards
     //footer
@@ -599,5 +640,4 @@ body{
     }
 
 }
-
 

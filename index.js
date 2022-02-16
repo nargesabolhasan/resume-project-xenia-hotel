@@ -11,14 +11,53 @@ $(document).ready(function () {
             bottom: 60
         }, 300, "linear");
     })
-})
-//-------------menu-----------------------
+
+    //-------------menu-----------------------
 // $("#js-hamburger").click(function () {
 //   $("#js-top-line").toggleClass("active");
 //   $("#js-center-line").toggleClass("active");
 //   $("#js-bottom-line").toggleClass("active");
 //   $("#js-nav").toggleClass("show");
 // });
+  $('#burger-menu').click(function () {
+    $('.menu-widget').css({
+      transform: 'translate(0px,97px)',
+      transition: "all .5s"
+    });
+    $('.menu').css({
+      position: 'fixed',
+      opacity:1,
+      width: '320px',
+      transition: "all .5s"
+    });
+     //shift page to left
+    $('.navBar').css({
+      transform:'translateX(-300px)',
+      transition: "all .5s"
+    })
+    $('.date-box-wraper').css({
+      transform:'translate(-310px,0px)',
+      transition:'all .5s'
+    })
+    $('.wraper2').css({
+      transform:'translate(-310px,660px)',
+      transition: "all .5s"
+    })
+    //
+    $('.burger-widget').css({
+      transform:'translate(100px,0px)',
+      transition: "all .5s"
+    })
+   })
+   $('.burger-widget2').css({
+    opacity:'1',
+    transition: "all .5s"
+ })
+  
+
+
+})
+
 
 
 

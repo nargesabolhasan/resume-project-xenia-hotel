@@ -107,6 +107,27 @@ overflow-x:hidden;
         }
     
 }
+@mixin border-bottom-anime{
+    @include display-flex(column,flex-start);
+    .read-more{ 
+        text-decoration: none; 
+        &:after {
+            content: '';
+            display: block;
+            @include width-height(0,2px);
+            background: map-get(v.$color-pallet,"green");
+            transition: width .3s;
+        }
+        &:hover:after {
+            width: 100%;
+            transition: width .3s;
+        }
+    }
+}
+@mixin phone-number {
+    @include font-style(v.$font-Stext,14px,200,1.5);
+}
+
 
 // @mixin respond ($breakpoint) {
 //     @if $breakpoint==tablet {
