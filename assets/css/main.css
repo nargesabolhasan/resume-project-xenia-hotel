@@ -118,6 +118,18 @@
   color: rgba(0, 0, 0, 0.322);
 }
 
+.bg-color-black-dark-opa {
+  background-color: rgba(0, 0, 0, 0.575);
+}
+
+.br-color-black-dark-opa {
+  border: 2px solid rgba(0, 0, 0, 0.575);
+}
+
+.txt-color-black-dark-opa {
+  color: rgba(0, 0, 0, 0.575);
+}
+
 .bg-color-light-opa {
   background-color: rgba(253, 253, 253, 0.418);
 }
@@ -284,6 +296,18 @@
 
 .txt-color-black-opa {
   color: rgba(0, 0, 0, 0.322);
+}
+
+.bg-color-black-dark-opa {
+  background-color: rgba(0, 0, 0, 0.575);
+}
+
+.br-color-black-dark-opa {
+  border: 2px solid rgba(0, 0, 0, 0.575);
+}
+
+.txt-color-black-dark-opa {
+  color: rgba(0, 0, 0, 0.575);
 }
 
 .bg-color-light-opa {
@@ -1254,6 +1278,29 @@ body {
 
 #last-icone:hover {
   background-color: #6fb586;
+}
+
+.go-up {
+  padding: 10px;
+  font-size: 40px;
+  border-radius: 50%;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  color: #f4f4f4;
+  background-color: rgba(0, 0, 0, 0.322);
+  z-index: 99999;
+  position: fixed;
+  bottom: 75px;
+  right: 20px;
+}
+
+.goto-holder {
+  width: 60px;
+  height: 60px;
+}
+.goto-holder i:hover {
+  background-color: rgba(0, 0, 0, 0.575);
 }
 
 @media only screen and (max-width: 1324px) {

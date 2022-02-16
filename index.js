@@ -310,5 +310,11 @@ function contorolButton(e) {
 } // console.log(arr)
 
 
+$('.go-up').click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+ 
+})
+
+
 
 

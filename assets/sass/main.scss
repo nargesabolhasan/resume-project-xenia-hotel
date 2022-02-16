@@ -444,6 +444,28 @@ body{
         background-color:map-get(v.$color-pallet,"green");
     }
 }
+//------******go up******--------
+.go-up{
+    padding:10px;
+    font-size:40px;
+    border-radius:50%;
+    text-align:center;
+    @include width-height(60px,60px);
+    color:map-get(v.$color-pallet,"light-gray");
+    background-color:map-get(v.$color-pallet,"black-opa");
+    z-index: 99999;
+    position: fixed;
+    bottom: 75px;
+    right: 20px;
+}
+.goto-holder{
+    @include width-height(60px,60px);
+    i:hover{
+        background-color:map-get(v.$color-pallet,"black-dark-opa");
+    }
+}
+
+
 
 //--------------responsive display---------------------------
 
@@ -597,8 +619,6 @@ body{
         }
     
     }
-
-
     //cards
     .main-gallory{
         @include display-flex(column);
