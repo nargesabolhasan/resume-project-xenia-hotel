@@ -600,6 +600,38 @@ body{
 
 
     //cards
+    .main-gallory{
+        @include display-flex(column);
+        img{
+            @include width-height(734px,1101px);
+        }
+    }
+    #ove-1 {
+        @include position(absolute,auto,auto,73%,auto);
+        @include width-height(734px,0px);
+    }
+    #ove-2 {
+        @include position(absolute,auto,auto,53.8%,auto);
+        @include width-height(734px,0px);
+    }
+    #ove-3 {
+        @include position(absolute,auto,auto,34.5%,auto);
+        @include width-height(734px,0px);
+        z-index: 88;
+    }
+    .card:hover #ove-1 {
+        height:1101px
+    }
+    .card:hover #ove-2 {
+        height:1101px
+    }
+    .card:hover #ove-3 {
+        height:1101px
+    }
+    .text {
+        @include position(absolute,55%,auto,auto,7%);
+        @include font-style(v.$font-Stext,35px,100,1.7);
+    }
     //footer
     .footer-widget{
         padding-left:16px;

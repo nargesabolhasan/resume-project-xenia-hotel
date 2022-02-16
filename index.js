@@ -12,13 +12,8 @@ $(document).ready(function () {
     }, 300, "linear");
   })
 
+
   //-------------menu-----------------------
-  // $("#js-hamburger").click(function () {
-  //   $("#js-top-line").toggleClass("active");
-  //   $("#js-center-line").toggleClass("active");
-  //   $("#js-bottom-line").toggleClass("active");
-  //   $("#js-nav").toggleClass("show");
-  // });
   $('#burger-menu').click(function () {
     $('.menu-widget').css({
       transform: 'translate(0px,97px)',
