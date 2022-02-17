@@ -112,7 +112,6 @@ $(document).ready(function () {
     let index = $(carousel).find('.caro-item.active1').index();
     let content = $(carousel).find('.carousel-holder');
     const length_item = $(carousel).find(".caro-item").length;
-    console.log(index)
     if (index < length_item - 1) {
       $(content).css('transform', `translateX(${(index + 1) * -1900}px)`)
       $(carousel).find('.caro-item.active1').removeClass('active1')
@@ -122,7 +121,7 @@ $(document).ready(function () {
       $(carousel).find('.caro-item').eq(0).addClass('active1')
     }
   }
-  setInterval(nextauto, 3000);
+  // setInterval(nextauto, 3000);
 
   //date btn:
   $('.btn-date').click(function(){
@@ -133,10 +132,30 @@ $(document).ready(function () {
 })
 function handelDate(e){
   e.preventDefault();
-  let form = $('.btn-holder')
-  let formElement = new FormData(form)
-  console.log(formElement)
+  let form = e.target
+  let formElement = new FormData(form) 
+   let stamp=formElement.get()
+  console.log(stamp)
+  
 }
+$.ajax({
+  type:'GET',
+  url: "http://localhost:3000/room",
+  cache: false,
+  success: function(response){
+    console.log(response)
+    arrayOfDate=[],
+    tableBody=$('table'),
+    response.map(item => {
+      const enteyOfDate=new Date(item.form).getTime();
+      const enteyOfDeparture=new Date(item.to).getTime();
+      const mark=`<tr><td class="td">${item.from}</td><td class="td">${item.to}</td></tr>`
+      tableBody.append(mark)
+      // if()
+
+    })
+  }
+});
 
 
 //---------pure js carousel 2--------------------

@@ -195,6 +195,32 @@ body{
     background-image: url('../images/next-btn.png');
   
 }
+.txt-car{
+    @include width-height();
+    @include display-flex(column,center,nowrap);
+     @include position(relative,0%,0%,auto,auto);
+    animation: translate_up 2s linear;
+    transform: translate(100px);
+    display: block;
+    z-index: 999;
+    .title-car{
+        @include font-style(v.$font-f1,50px,300,1.5);
+    }
+    .t-car{
+        @include font-style(v.$font-f1,20px,300,1.5);
+    }
+    .btn-car{
+        padding: v.$botton-padding;
+        @include btn-animate(transparent,
+        map-get(v.$color-pallet,"light-gray"),
+        rgba(238, 238, 238, 0));
+    }
+    
+}
+// @keyframes translate_up{
+//     0%{transform: translateY(-100px);opacity: 0%;}
+//     0%{transform: translateY(0px);opacity: 100%;}
+// }
 
 //------******date-box******--------
 .date-box-wraper{
@@ -491,6 +517,23 @@ body{
     i:hover{
         background-color:map-get(v.$color-pallet,"black-dark-opa");
     }
+}
+//modal:
+.modal{
+    visibility: hidden;
+    @include position(absolute,25%,auto,auto,45%);
+    table, th, td {
+        border: 1px solid map-get(v.$color-pallet,"blck");
+        padding:10px;
+        background-color: map-get(v.$color-pallet,"light-gray");
+    }
+    th{
+        background-color: map-get(v.$color-pallet,"dark-yellow");
+    }
+}
+
+.td{
+    padding: v.$center;
 }
 
 //--------------responsive display---------------------------
