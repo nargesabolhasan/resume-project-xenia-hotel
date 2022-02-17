@@ -31,10 +31,11 @@
     background-size: cover;
 }
 
-@mixin carousel-style{
-    @include img-style;
-    @include width-height(100%,100%);
-    @include position(absolute,0%,0%,0%,0%);
+@mixin btn-date-room{
+    @include width-height(360px,97px);
+    padding:28px 24px ;
+    text-align: center;
+    @include font-style(v.$font-Stext,22px,200,1.5);
 }
 
 @mixin font-style($font,$size:18px,$weight:200,$height: 1.5) {
@@ -126,6 +127,11 @@ overflow-x:hidden;
 }
 @mixin phone-number {
     @include font-style(v.$font-Stext,14px,200,1.5);
+}
+@mixin icon-style($padding:18px){
+    border-radius: 50%;
+    padding:$padding;
+    margin-right:10px;
 }
 
 

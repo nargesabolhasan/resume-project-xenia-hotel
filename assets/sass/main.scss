@@ -68,6 +68,7 @@ body{
     @include width-height(100%,100px);
     @include position(relative);
     z-index: 9;
+    // overflow: hidden;
 };
 
 .ul-style-nav{
@@ -78,16 +79,29 @@ body{
     @include position(absolute,20px,auto,auto,10px);
 };
 .center-nav-item{
-    margin:v.$center
-
-
+    margin:v.$center;
+    @include font-style(v.$font-Stext,16px);
+    #home{
+        border-bottom: 2px solid map-get(v.$color-pallet , "green");
+        text-decoration: none ;
+    }
 };
 .right-nav-item{
     @include position(absolute,30px,1%)
 };
 .nav-li{
     margin-right: 30px;
+    @include position(relative);
+
 };
+.drop-down{
+    background-color: #000;
+    @include position(relative,45px,auto,auto,-65%);
+    @include width-height(150px);
+    padding: 12px 0;
+    z-index: 9999;
+    // visibility: hidden;
+}
 .yellow-button{
     padding: v.$botton-padding;
     @include btn-animate(map-get(v.$color-pallet,"dark-yellow"),
@@ -133,7 +147,7 @@ body{
     }
     .icon-holder-menu{
         i{
-            margin-right: 10px;
+            @include icon-style(0px);
         }
         @include font-style(v.$font-Stext,16px,200,1.5);
         padding: 10px 0,
@@ -144,15 +158,30 @@ body{
 }
 //------******carousel******--------
 .first-slide-show{
-    .carousel-inner{  
-        // @include width-height(100%,500px);
-        //  z-index: -999;
-        .carousel-img{
-            @include  carousel-style;
-            @include width-height(100%,700px);
-        }
-    } 
+    @include display-flex(row);
+    @include width-height(1900px,720px);
+    overflow: hidden;
+    @include position(absolute,0,auto,auto,0);
+    .carousel-holder{
+        @include display-flex(row,center,nowrap);
+        @include position(absolute,0,auto,auto,0px);
+         transition: transform 1s;
+
+    }
+
 }
+.caro-item {
+    transition: all 1s;
+    text-align: start;
+    .carousel-img{
+        width: 1900px;
+        @include img-style;
+        height:720px;
+      }
+  }
+  
+
+
 #carousel-prev{
     @include width-height(44px,50px);
     @include btn-carousel;
@@ -166,6 +195,7 @@ body{
     background-image: url('../images/next-btn.png');
   
 }
+
 //------******date-box******--------
 .date-box-wraper{
     @include display-flex(row);
@@ -183,12 +213,15 @@ body{
         text-align: center;
         padding-top: v.$standard-margin;
         @include font-style(v.$font-Stext,18px,200,1.5);
+        .label {
+            @include display-flex(column);
+        }
     }
     .btn-date{
-        @include width-height(360px,97px);
-        padding:28px 24px ;
-        margin-top: v.$standard-margin;
-        @include font-style(v.$font-Stext,20px,200,1.5);
+        @include btn-date-room;
+    }
+    .btn-room{
+        @include btn-date-room;
     }
     .green-button{
         padding:12px 32px ;
@@ -283,7 +316,6 @@ body{
     }
     
 }
-
 //------******Secound carousel******--------
 .Secound-slide-show {
     @include display-flex(row);
@@ -380,7 +412,6 @@ body{
 
     }
   }
-  
 //------******footer******--------
 .footer-wraper{
     @include width-height(100%,300px); 
@@ -407,9 +438,7 @@ body{
          @include display-flex(row);
          @include font-style(v.$font-Stext,16px,100,1.5);
          i{
-             border-radius: 50%;
-             padding:18px;
-             margin-right:10px;
+            @include icon-style();
          }
          
      }
@@ -463,8 +492,6 @@ body{
         background-color:map-get(v.$color-pallet,"black-dark-opa");
     }
 }
-
-
 
 //--------------responsive display---------------------------
 

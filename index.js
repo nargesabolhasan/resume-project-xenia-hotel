@@ -11,8 +11,6 @@ $(document).ready(function () {
       bottom: 60
     }, 300, "linear");
   })
-
-
   //-------------menu-----------------------
   $('#burger-menu').click(function () {
     $('.menu-widget').css({
@@ -71,11 +69,74 @@ $(document).ready(function () {
     transition: "all .5s"
   })
 
+  //---------------go up--------------------
+  $('.go-up').click(function () {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
 
+  })
 
+  //--------------first caruosel-------------
+  $('#carousel-next').click(carousel);
+  $('#carousel-prev').click(carousel);
+  function carousel() {
+    let carousel = $(this).parents('.first-slide-show');
+    let index = $(carousel).find('.caro-item.active1').index();
+    let content = $(carousel).find('.carousel-holder');
+    const length_item = $(carousel).find(".caro-item").length;
+    //next
+    if ($(this).attr('id') === 'carousel-next') {
+      if (index < length_item - 1) {
+        $(content).css('transform', `translateX(${(index + 1) * -1900}px)`)
+        $(carousel).find('.caro-item.active1').removeClass('active1')
+        $(carousel).find('.caro-item').eq(index + 1).addClass('active1')
+      } else {
+        $(carousel).find('.caro-item.active1').removeClass('active1')
+        $(carousel).find('.caro-item').eq(0).addClass('active1')
+      }
+      //prev
+    }else{
+      if (index > 0) {
+        $(content).css('transform', `translateX(${(index - 1) * -1900}px)`)
+        $(carousel).find('.caro-item.active1').removeClass('active1')
+        $(carousel).find('.caro-item').eq(index - 1).addClass('active1')
+      } else {
+        $(carousel).find('.caro-item.active1').removeClass('active1')
+        $(carousel).find('.caro-item').eq(0).addClass('active1')
+      }
+    }
+  }
+
+  //auto carousel:
+  function nextauto() {
+    let carousel = $('.first-slide-show');
+    let index = $(carousel).find('.caro-item.active1').index();
+    let content = $(carousel).find('.carousel-holder');
+    const length_item = $(carousel).find(".caro-item").length;
+    console.log(index)
+    if (index < length_item - 1) {
+      $(content).css('transform', `translateX(${(index + 1) * -1900}px)`)
+      $(carousel).find('.caro-item.active1').removeClass('active1')
+      $(carousel).find('.caro-item').eq(index + 1).addClass('active1')
+    } else {
+      $(carousel).find('.caro-item.active1').removeClass('active1')
+      $(carousel).find('.caro-item').eq(0).addClass('active1')
+    }
+  }
+  setInterval(nextauto, 3000);
+
+  //date btn:
+  $('.btn-date').click(function(){
+    $(this).attr('type', 'date')
+  })
+
+  
 })
-
-
+function handelDate(e){
+  e.preventDefault();
+  let form = $('.btn-holder')
+  let formElement = new FormData(form)
+  console.log(formElement)
+}
 
 
 //---------pure js carousel 2--------------------
@@ -309,11 +370,9 @@ function contorolButton(e) {
   }
 } // console.log(arr)
 
+////////////////////
 
-$('.go-up').click(function() {
-  $("html, body").animate({ scrollTop: 0 }, "slow");
- 
-})
+
 
 
 
