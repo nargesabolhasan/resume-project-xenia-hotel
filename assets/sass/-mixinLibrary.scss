@@ -109,7 +109,7 @@ overflow-x:hidden;
 }
 @mixin border-bottom-anime{
     @include display-flex(column,flex-start);
-    .read-more{ 
+    .border-bt-anime{ 
         text-decoration: none; 
         &:after {
             content: '';

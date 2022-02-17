@@ -10,15 +10,64 @@
 body{
     box-sizing:border-box;
 };
-//----------------container-----------------------
+//----------------globall classes-----------------------
+.h1{
+    margin-bottom: 20px ;
+    @include font-style(v.$font-f1,40px,700,1.1);
+}
+.h2{
+    @include width-height(auto,150px);
+    @include font-style(v.$font-f1,140px,200,1);
+    opacity:8%;
+    transform:translateY(100px) ;
+}
+.h3{
+    margin:20px 0px;
+    @include font-style(v.$font-f1,20px,700,1.1);
+}
+.h4{
+    @include font-style(v.$font-Stext,18px,200,1.5);
+    margin:v.$standard-margin;
+}
+.h6{
+    @include font-style(v.$font-Stext,15px,300,1.5);
+    
+}
+.p{
+    @include font-style(v.$font-Stext);
+}
+.avatar{
+    border-radius: 50%;
+    margin-top:30px;
+    @include width-height(70px,70px);
+}
+.icone-xab{
+    margin:v.$standard-margin;
+}
+.a-holder{
+    @include border-bottom-anime;
+}
+.fa-circle{
+    font-size:11px;
+    margin-right: 10px;
+    opacity: 0.5;
+    &:hover{
+        opacity: 1; 
+    }
+}
+.a {
+    text-decoration: none ;
+    &:hover{
+        color:map-get(v.$color-pallet,"green");
+        
+    }
+}
 //------******navBar******--------
 .navBar{
     @include display-flex(row);
     @include width-height(100%,100px);
     @include position(relative);
     z-index: 9;
- 
-
 };
 
 .ul-style-nav{
@@ -30,6 +79,8 @@ body{
 };
 .center-nav-item{
     margin:v.$center
+
+
 };
 .right-nav-item{
     @include position(absolute,30px,1%)
@@ -161,40 +212,6 @@ body{
         transform: translateY(-200px);
     }
 }
-.h1{
-    margin-bottom: 20px ;
-    @include font-style(v.$font-f1,40px,700,1.1);
-}
-.h2{
-    @include width-height(auto,150px);
-    @include font-style(v.$font-f1,140px,200,1);
-    opacity:8%;
-    transform:translateY(100px) ;
-}
-.h3{
-    margin:20px 0px;
-    @include font-style(v.$font-f1,20px,700,1.1);
-}
-.h4{
-    @include font-style(v.$font-Stext,18px,200,1.5);
-    margin:v.$standard-margin;
-}
-.h6{
-    @include font-style(v.$font-Stext,15px,300,1.5);
-    
-}
-.p{
-    @include font-style(v.$font-Stext);
-}
-.avatar{
-    border-radius: 50%;
-    margin-top:30px;
-    @include width-height(70px,70px);
-}
-.icone-xab{
-    margin:v.$standard-margin;
-}
-
 //------******cards******--------
 .main-gallory{
     @include display-flex(row);
@@ -318,17 +335,6 @@ body{
         }
      }
 }
-.a-holder{
-    @include border-bottom-anime;
-}
-.fa-circle{
-    font-size:11px;
-    margin-right: 10px;
-    opacity: 0.5;
-    &:hover{
-        opacity: 1; 
-    }
-}
 //------******last carousel******--------
 .slider {
     @include width-height(750px,248px);
@@ -408,13 +414,6 @@ body{
          
      }
 
-}
-.a {
-    text-decoration: none ;
-    &:hover{
-        color:map-get(v.$color-pallet,"green");
-        
-    }
 }
 
 .footer-row{

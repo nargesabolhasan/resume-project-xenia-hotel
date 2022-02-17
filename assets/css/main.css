@@ -368,6 +368,117 @@ body {
   box-sizing: border-box;
 }
 
+.h1 {
+  margin-bottom: 20px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Playfair Display;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  overflow-x: hidden;
+}
+
+.h2 {
+  width: auto;
+  height: 150px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Playfair Display;
+  font-size: 140px;
+  font-weight: 200;
+  line-height: 1;
+  overflow-x: hidden;
+  opacity: 8%;
+  transform: translateY(100px);
+}
+
+.h3 {
+  margin: 20px 0px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Playfair Display;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  overflow-x: hidden;
+}
+
+.h4 {
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.5;
+  overflow-x: hidden;
+  margin: 20px;
+}
+
+.h6 {
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.p {
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.avatar {
+  border-radius: 50%;
+  margin-top: 30px;
+  width: 70px;
+  height: 70px;
+}
+
+.icone-xab {
+  margin: 20px;
+}
+
+.a-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.a-holder .border-bt-anime {
+  text-decoration: none;
+}
+.a-holder .border-bt-anime:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #6fb586;
+  transition: width 0.3s;
+}
+.a-holder .border-bt-anime:hover:after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.fa-circle {
+  font-size: 11px;
+  margin-right: 10px;
+  opacity: 0.5;
+}
+.fa-circle:hover {
+  opacity: 1;
+}
+
+.a {
+  text-decoration: none;
+}
+.a:hover {
+  color: #6fb586;
+}
+
 .navBar {
   display: flex;
   flex-direction: row;
@@ -695,78 +806,6 @@ body {
   transform: translateY(-200px);
 }
 
-.h1 {
-  margin-bottom: 20px;
-  -webkit-font-smoothing: antialiased;
-  font-family: Playfair Display;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.1;
-  overflow-x: hidden;
-}
-
-.h2 {
-  width: auto;
-  height: 150px;
-  -webkit-font-smoothing: antialiased;
-  font-family: Playfair Display;
-  font-size: 140px;
-  font-weight: 200;
-  line-height: 1;
-  overflow-x: hidden;
-  opacity: 8%;
-  transform: translateY(100px);
-}
-
-.h3 {
-  margin: 20px 0px;
-  -webkit-font-smoothing: antialiased;
-  font-family: Playfair Display;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.1;
-  overflow-x: hidden;
-}
-
-.h4 {
-  -webkit-font-smoothing: antialiased;
-  font-family: Source Sans Pro;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 1.5;
-  overflow-x: hidden;
-  margin: 20px;
-}
-
-.h6 {
-  -webkit-font-smoothing: antialiased;
-  font-family: Source Sans Pro;
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-
-.p {
-  -webkit-font-smoothing: antialiased;
-  font-family: Source Sans Pro;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-
-.avatar {
-  border-radius: 50%;
-  margin-top: 30px;
-  width: 70px;
-  height: 70px;
-}
-
-.icone-xab {
-  margin: 20px;
-}
-
 .main-gallory {
   display: flex;
   flex-direction: row;
@@ -1065,38 +1104,6 @@ body {
   overflow-x: hidden;
 }
 
-.a-holder {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-.a-holder .read-more {
-  text-decoration: none;
-}
-.a-holder .read-more:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #6fb586;
-  transition: width 0.3s;
-}
-.a-holder .read-more:hover:after {
-  width: 100%;
-  transition: width 0.3s;
-}
-
-.fa-circle {
-  font-size: 11px;
-  margin-right: 10px;
-  opacity: 0.5;
-}
-.fa-circle:hover {
-  opacity: 1;
-}
-
 .slider {
   width: 750px;
   height: 248px;
@@ -1232,13 +1239,6 @@ body {
   border-radius: 50%;
   padding: 18px;
   margin-right: 10px;
-}
-
-.a {
-  text-decoration: none;
-}
-.a:hover {
-  color: #6fb586;
 }
 
 .footer-row {
