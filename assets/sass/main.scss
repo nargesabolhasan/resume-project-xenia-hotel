@@ -756,8 +756,12 @@ body{
 }
 //modal:
 .modal{
-    visibility: hidden;
+    // visibility: hidden;
+    background-color: map-get(v.$color-pallet,"black");
+    @include width-height(320);
+    @include display-flex(column);
     @include position(absolute,25%,auto,auto,45%);
+    padding:10px;
     table, th, td {
         border: 1px solid map-get(v.$color-pallet,"blck");
         padding:10px;

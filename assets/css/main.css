@@ -1942,12 +1942,20 @@ body {
 }
 
 .modal {
-  visibility: hidden;
+  background-color: #15151e;
+  width: 320;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
   position: absolute;
   top: 25%;
   right: auto;
   bottom: auto;
   left: 45%;
+  padding: 10px;
 }
 .modal table, .modal th, .modal td {
   border: 1px solid;

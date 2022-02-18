@@ -171,8 +171,6 @@ $(document).ready(function () {
     $(this).attr('type', 'date')
 
   })
-
-
 })
 function handelDate(e) {
   e.preventDefault();
@@ -181,12 +179,13 @@ function handelDate(e) {
   for(var pair of formData.entries()) {
     let index1=pair[0].getTime();
     let index2 =pair[1].getTime();
-
+    console.log( index1)
 }
 }
+//ajax:
 $.ajax({
   type: 'GET',
-  url: "http://localhost:3000/room",
+  url: "./main.json",
   cache: false,
   success: function (response) {
     console.log(response)
@@ -195,7 +194,7 @@ $.ajax({
       response.map(item => {
         const enteyOfDate = new Date(item.form).getTime();
         const enteyOfDeparture = new Date(item.to).getTime();
-        const mark = `<tr><td class="td">${item.from}</td><td class="td">${item.to}</td></tr>`
+        const mark = `<tr><td class="td">${item.from}</td><td class="td">${item.to}</td><td class="td">${item.room}</td></tr>`
         tableBody.append(mark)
         // if()
 
@@ -203,7 +202,8 @@ $.ajax({
   }
 });
 
-console.log($('.first-slide-show').width())
+//close
+$()
 //---------pure js carousel 2--------------------
 var slider1 = document.getElementById('carousel2'),
   sliderItems1 = document.getElementById('holder');
@@ -415,44 +415,6 @@ function slide(wrapper, items) {
 }
 //-----------------contorol buttons-----------------
 
-// $('.fa-circle').click(carouselaa)
-// function carouselaa() {
-// var slider = document.getElementById('slider'),
-// sliderItems = document.getElementById('itemse');
-// width_slider = slider.offsetWidth;
-// act=document.getElementsByClassName('slide act');
-// index = $(slider).find(act).index();
-// const length_item =document.getElementsByClassName('slide').length;
-// console.log(act)
-// sliderItems.transform
-// Array.from(document.querySelectorAll('li')).indexOf(el)
-// content.style.transform="translateX(200px)"
 
-  // if ($(this).attr('id') === 'carousel-next') {
-  //   if (index < length_item - 1) {
-  //     $(content).css('transform', `translateX(${(index + 1) * -width_carousel}px)`)
-  //     $(carousel).find('.caro-item.active1').removeClass('active1')
-  //     $(carousel).find('.caro-item').eq(index + 1).addClass('active1')
-
-  //   } else {
-  //     $(carousel).find('.caro-item.active1').removeClass('active1')
-  //     $(carousel).find('.caro-item').eq(0).addClass('active1')
-  //   }
-  //   //prev
-  // } else {
-  //   if (index > 0) {
-  //     $(content).css('transform', `translateX(${(index - 1) * -width}px)`)
-  //     $(carousel).find('.caro-item.active1').removeClass('active1')
-  //     $(carousel).find('.caro-item').eq(index - 1).addClass('active1')
-  //   } else {
-  //     $(carousel).find('.caro-item.active1').removeClass('active1')
-  //     $(carousel).find('.caro-item').eq(0).addClass('active1')
-  //   }
-
-  // }
-
-// }
-
-carouselaa()
 
 
