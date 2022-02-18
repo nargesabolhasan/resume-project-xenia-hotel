@@ -152,6 +152,14 @@ overflow-x:hidden;
       @content;
     }
   }
+
+  @if $breakpoint==S-mobile {
+    @media only screen and (max-width: 375px) {
+      @content;
+    }
+  }
+  
+
 }
 
 

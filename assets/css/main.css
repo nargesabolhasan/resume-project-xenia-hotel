@@ -652,6 +652,12 @@ body {
   height: 100vh;
   float: right;
 }
+@media only screen and (max-width: 375px) {
+  .menu {
+    width: 290px;
+    height: 1000px;
+  }
+}
 .menu #menu-inner {
   margin: 0 30px;
   padding-bottom: 30px;
@@ -757,6 +763,12 @@ body {
     height: 720px;
   }
 }
+@media only screen and (max-width: 375px) {
+  .first-slide-show {
+    width: 375px;
+    height: 360px;
+  }
+}
 .first-slide-show .carousel-holder {
   display: flex;
   flex-direction: row;
@@ -791,6 +803,12 @@ body {
   .caro-item .carousel-img {
     width: 764px;
     height: 720px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .caro-item .carousel-img {
+    width: 375px;
+    height: 360px;
   }
 }
 
@@ -917,6 +935,15 @@ body {
   width: auto;
   height: auto;
   margin: 0 auto;
+}
+@media only screen and (max-width: 375px) {
+  .date-box-wraper {
+    position: relative;
+    top: 240px;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
 }
 
 .date-box {
@@ -1075,6 +1102,12 @@ body {
     overflow-x: hidden;
   }
 }
+@media only screen and (max-width: 375px) {
+  .date-box .btn-date {
+    width: 345px;
+    height: 97px;
+  }
+}
 .date-box .btn-room {
   width: 360px;
   height: 97px;
@@ -1150,6 +1183,16 @@ body {
 }
 .text-box .providing-holder {
   transform: translateY(-200px);
+}
+@media only screen and (max-width: 375px) {
+  .text-box .providing-holder {
+    transform: translateY(-390px);
+  }
+}
+@media only screen and (max-width: 764px) {
+  .text-box .providing-holder .h2 {
+    display: none !important;
+  }
 }
 
 .main-gallory {
@@ -1925,12 +1968,24 @@ body {
   text-align: center;
   width: 60px;
   height: 60px;
+  position: fixed;
+  top: auto;
+  right: 20px;
+  bottom: 75px;
+  left: auto;
   color: #f4f4f4;
   background-color: rgba(0, 0, 0, 0.322);
   z-index: 99999;
-  position: fixed;
-  bottom: 75px;
-  right: 20px;
+}
+@media only screen and (max-width: 764px) {
+  .go-up {
+    position: fixed;
+    top: auto;
+    right: 60px;
+    bottom: 20px;
+    left: auto;
+    margin: 0 auto;
+  }
 }
 
 .goto-holder {
@@ -1951,10 +2006,10 @@ body {
   align-items: center;
   flex-wrap: wrap;
   position: absolute;
-  top: 25%;
+  top: 15%;
   right: auto;
   bottom: auto;
-  left: 45%;
+  left: 40.2%;
   opacity: 0;
   padding: 10px;
 }
@@ -1963,7 +2018,7 @@ body {
   padding: 10px;
   -webkit-font-smoothing: antialiased;
   font-family: Source Sans Pro;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 100;
   line-height: 1.5;
   overflow-x: hidden;

@@ -28,6 +28,24 @@ $(document).ready(function () {
       transform: 'translate(0px,97px)',
       transition: "all .5s"
     });
+    $('.navBar').css({
+      transform: 'translateX(-300px)',
+      transition: "all .5s"
+    })
+    $('.date-box-wraper').css({
+      transform: 'translate(-310px,0px)',
+      transition: 'all .5s'
+    })
+    $('.wraper2').css({
+      transform: 'translate(-310px,660px)',
+      transition: "all .5s"
+    })
+    
+    $('.burger-widget').css({
+      transform: 'translate(100px,0px)',
+      transition: "all .5s"
+    })
+    ////respond
     if (window.matchMedia('(max-width: 1324px)').matches) {
       $('.menu').css({
         position: 'fixed',
@@ -50,6 +68,25 @@ $(document).ready(function () {
         transition: "all .5s"
       });
     }
+    if (window.matchMedia('(max-width: 375px)').matches) {
+      $('.menu').css({
+        display: "inline",
+        position: 'absolute',
+        left: '20%',
+        transition: "all .5s"
+      });
+      $('.container-widget').css({
+        position: 'fixed',
+      });
+      $('.navBar').css({
+        transform: 'translateX(-200px)',
+        transition: "all .5s"
+      })
+      $('.yellow-button').css({
+        transform: 'translateX(-200px)',
+        transition: "all .5s"
+      })
+    }
     else {
       (window.matchMedia('(max-width: 1860px)').matches)
       $('.menu').css({
@@ -59,23 +96,6 @@ $(document).ready(function () {
       });
     }
     //shift page to left
-    $('.navBar').css({
-      transform: 'translateX(-300px)',
-      transition: "all .5s"
-    })
-    $('.date-box-wraper').css({
-      transform: 'translate(-310px,0px)',
-      transition: 'all .5s'
-    })
-    $('.wraper2').css({
-      transform: 'translate(-310px,660px)',
-      transition: "all .5s"
-    })
-    //
-    $('.burger-widget').css({
-      transform: 'translate(100px,0px)',
-      transition: "all .5s"
-    })
   })
   $('#close-menu').click(function () {
     $('.menu-widget').css({
@@ -107,6 +127,12 @@ $(document).ready(function () {
       transform: 'translate(0px,0px)',
       transition: "all .5s"
     })
+    if (window.matchMedia('(max-width: 375px)').matches) {
+      $('.yellow-button').css({
+        transform: 'translateX(0px)',
+        transition: "all .5s"
+      })
+    }
   })
 
   //---------------go up--------------------
@@ -177,6 +203,8 @@ function handelDate(e) {
   e.preventDefault();
   let from = new Date($('#date1').val());
   let to = new Date($('#date2').val()).getTime();
+  let room = ($('#select').val());
+
   if (from, to) {
     $('.modal').css("opacity","1");
     $.ajax({
@@ -186,13 +214,13 @@ function handelDate(e) {
             response.map(item => {
             let entryOfDate = new Date(item.from).getTime();
             let dateOfDeparture = new Date(item.to).getTime();
-            if (from >= entryOfDate && to <= dateOfDeparture) {
-              let inputTable = `<tr><td class="td">${item.from}</td><td class="td">${item.to}</td><td class="td">${item.room}</td></tr>`
+            if (from >= entryOfDate && to <= dateOfDeparture && room==item.bed) {
+              let inputTable = `<tr><td class="td">${item.from}</td><td class="td">${item.to}</td><td class="td">${item.room}</td><td class="td">${item.bed}</td></tr>`
               $('table').append(inputTable)
               $("tr:last").css( "backgroundColor", "#6fb586" )
 
             }else {
-              let inputTable = `<tr><td class="td">${item.from}</td><td class="td">${item.to}</td><td class="td">${item.room}</td></tr>`
+              let inputTable = `<tr><td class="td">${item.from}</td><td class="td">${item.to}</td><td class="td">${item.room}</td><td class="td">${item.bed}</td></tr>`
               $('table').append(inputTable)
               $("tr:last").css( "backgroundColor", "white" )
             }

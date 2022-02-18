@@ -128,6 +128,10 @@ body{
     z-index: 99;
     @include width-height(320px,100vh);
     float:right;
+    @include respond(S-mobile){
+        @include width-height(290px,1000px);
+    }
+    
     #menu-inner{
         margin:0 30px;
         padding-bottom: 30px;
@@ -190,6 +194,10 @@ body{
     @include respond (mobile){
         @include width-height(764px,720px);
     }
+    @include respond(S-mobile){
+        @include width-height(375px,360px);
+    }
+    
 
     .carousel-holder{
         @include display-flex(row,center,nowrap);
@@ -212,6 +220,9 @@ body{
         }
         @include respond (mobile){
             @include width-height(764px,720px);
+        }
+        @include respond(S-mobile){
+            @include width-height(375px,360px);
         }
 
       }
@@ -259,6 +270,9 @@ body{
     @include position(relative,550px);
     @include width-height(auto,auto);
     margin: v.$center;
+    @include respond(S-mobile){
+        @include position(relative,240px);
+    }
 }
 .date-box{
     @include width-height(1300px,284px);
@@ -274,7 +288,6 @@ body{
         flex-wrap:wrap;
         overflow: wrap;
     };
-    
 
     .btn-holder{
         @include width-height(1200px,100%);
@@ -308,6 +321,7 @@ body{
             padding-top: v.$standard-margin;
             @include font-style(v.$font-Stext,18px,200,1.5);
         };
+
         .label {
             @include display-flex(column);
         }
@@ -329,6 +343,9 @@ body{
             @include width-height(730px,159px);
             @include font-style(v.$font-Stext,20px,200,1.5);
         };
+        @include respond(S-mobile){
+            @include width-height(345px,97px);
+        }
         
 
 
@@ -356,7 +373,16 @@ body{
     @include width-height(auto,400px);
     .providing-holder{
         transform: translateY(-200px);
-    }
+        @include respond(S-mobile){
+            transform: translateY(-390px);
+        }
+        .h2{
+            @include respond (mobile){
+                display:none !important;
+                 };
+         }
+        }
+
 }
 //------******cards******--------
 .main-gallory{
@@ -741,12 +767,15 @@ body{
     border-radius:50%;
     text-align:center;
     @include width-height(60px,60px);
+    @include position(fixed,auto,20px,75px,auto);
     color:map-get(v.$color-pallet,"light-gray");
     background-color:map-get(v.$color-pallet,"black-opa");
     z-index: 99999;
-    position: fixed;
-    bottom: 75px;
-    right: 20px;
+
+    @include respond (mobile){
+        @include position(fixed,auto,60px,20px,auto);
+        margin: v.$center;
+    }
 }
 .goto-holder{
     @include width-height(60px,60px);
@@ -754,19 +783,19 @@ body{
         background-color:map-get(v.$color-pallet,"black-dark-opa");
     }
 }
-//modal:
+//------******modal******--------
 .modal{
 
     background-color: map-get(v.$color-pallet,"black");
     @include width-height(320);
     @include display-flex(column);
-    @include position(absolute,25%,auto,auto,45%);
+    @include position(absolute,15%,auto,auto,40.2%);
     opacity: 0;
     padding:10px;
     table, th, td {
         border: 1px solid map-get(v.$color-pallet,"black");
         padding:10px;
-        @include font-style(v.$font-Stext,16px,100,1.5);
+        @include font-style(v.$font-Stext,20px,100,1.5);
         color:map-get(v.$color-pallet,"black");
     }
     th{
