@@ -85,6 +85,7 @@ body{
     @include respond (tablet){
         display: none;
     };
+
     #home{
         border-bottom: 2px solid map-get(v.$color-pallet , "green");
         text-decoration: none ;
@@ -121,6 +122,10 @@ body{
     #menu-inner{
         margin:0 30px;
         padding-bottom: 30px;
+    }
+    .close-nav-li{
+        padding-left:30px;
+        @include position(absolute,45px,auto,auto,0);
     }
     .menu-item{
         .sub-menu{
@@ -164,6 +169,7 @@ body{
 .first-slide-show{
     @include display-flex(row);
     @include width-height(1900px,720px);
+    @include position(absolute,0,auto,auto,0);
     overflow: hidden;
     //respond
     @include respond (desktop){
@@ -172,7 +178,10 @@ body{
     @include respond (tablet){
         @include width-height(986px,720px);
     }
-    @include position(absolute,0,auto,auto,0);
+    @include respond (mobile){
+        @include width-height(764px,720px);
+    }
+
     .carousel-holder{
         @include display-flex(row,center,nowrap);
         @include position(absolute,0,auto,auto,0px);
@@ -233,10 +242,6 @@ body{
     }
     
 }
-// @keyframes translate_up{
-//     0%{transform: translateY(-100px);opacity: 0%;}
-//     0%{transform: translateY(0px);opacity: 100%;}
-// }
 
 //------******date-box******--------
 .date-box-wraper{
@@ -254,6 +259,12 @@ body{
         flex-wrap:wrap;
         overflow: wrap;
     }
+    @include respond (mobile){
+        @include width-height(764px,750px);
+        flex-wrap:wrap;
+        overflow: wrap;
+    };
+    
 
     .btn-holder{
         @include width-height(1200px,100%);
@@ -279,6 +290,14 @@ body{
             padding-top: v.$standard-margin;
             @include font-style(v.$font-Stext,18px,200,1.5);
         }
+        @include respond (mobile){
+            @include width-height(750px,750px);
+            @include display-flex(column);
+            margin:v.$center;
+            text-align: center;
+            padding-top: v.$standard-margin;
+            @include font-style(v.$font-Stext,18px,200,1.5);
+        };
         .label {
             @include display-flex(column);
         }
@@ -296,6 +315,11 @@ body{
             padding:10px 20px ;
             @include font-style(v.$font-Stext,16px,200,1.5);
         }
+        @include respond (mobile){
+            @include width-height(730px,159px);
+            @include font-style(v.$font-Stext,20px,200,1.5);
+        };
+        
 
 
     }
@@ -329,6 +353,31 @@ body{
     @include display-flex(row);
     margin-top:100px;
     z-index:3;
+    @include respond (mobile){
+        @include display-flex(column);
+        #ove-1 {
+            @include position(absolute,auto,auto,73%,auto);
+            @include width-height(734px,0px);
+        }
+        #ove-2 {
+            @include position(absolute,auto,auto,53.8%,auto);
+            @include width-height(734px,0px);
+        }
+        #ove-3 {
+            @include position(absolute,auto,auto,34.5%,auto);
+            @include width-height(734px,0px);
+            z-index: 88;
+        }
+        .card:hover #ove-1 {
+            height:1101px
+        }
+        .card:hover #ove-2 {
+            height:1101px
+        }
+        .card:hover #ove-3 {
+            height:1101px
+        }
+    };
 
     img{
         @include img-style;
@@ -340,6 +389,9 @@ body{
         };
         @include respond (tablet){
             @include width-height(220px,330px); 
+        };
+        @include respond (mobile){
+            @include width-height(734px,1101px);
         };
         
     }
@@ -401,6 +453,10 @@ body{
         @include font-style(v.$font-Stext,13px,100,1.5);
         text-align: start;
     };
+    @include respond (mobile){
+        @include position(absolute,55%,auto,auto,7%);
+        @include font-style(v.$font-Stext,35px,100,1.7);
+    };
 }
 //---------------------wraper3----------------------------
 .wraper3{
@@ -438,11 +494,15 @@ body{
     margin-bottom: 100px;
     //respond
     @include respond (desktop){
-        @include width-height(870px,350px);
+        @include width-height(100%,350px);
         padding:0 150px;
     }
     @include respond (tablet){
         padding:0 110px;
+    };
+    @include respond (mobile){
+        padding:0 0px;
+        @include width-height(100%,960px);
     };
     
     .slider2-widget {
@@ -459,6 +519,11 @@ body{
             @include width-height(760px,455px);
             overflow: hidden;
         };
+        @include respond (mobile){
+            @include width-height(760px,790px);
+            
+    
+        };
       }
   }
   .slide-holder {
@@ -466,10 +531,6 @@ body{
     @include position(relative,0,auto,auto,auto);
     //respond
     @include respond (desktop){
-        margin: v.$center;
-        overflow: hidden;
-    }
-    @include respond (tablet){
         margin: v.$center;
         overflow: hidden;
     }
@@ -493,6 +554,12 @@ body{
     @include respond (tablet){
         @include width-height(760px,455px);
     };
+    @include respond (mobile){
+        padding: 20px;
+        @include width-height(760px,630px);
+        @include display-flex(column,center,nowrap,space-between);
+
+    };
     img{
         @include width-height(50%,100%);
         @include respond (desktop){
@@ -501,9 +568,20 @@ body{
         @include respond (tablet){
             @include img-style ;
         };
+        @include respond (mobile){
+            @include width-height(100%,50%);
+            order:1;
+            
+        };
     }
     .caption-slide-show{
         padding-left: 18px;
+        @include respond (mobile){
+            @include width-height(100%,50%);
+            padding: 20px;
+            order:2;
+            
+        };
         h1{
             margin:0px;
         }
@@ -574,17 +652,25 @@ body{
     padding-top:48px;
     .footer-widget{
         @include display-flex(column); 
+        @include respond (mobile){
+            padding-left:16px;
+        };
+    }
         span{
             height:22px;
             margin-top:30px;
             // margin-bottom:60px;
         }  
-    }
 }
+
 
 .footer-info-holder{
     @include display-flex(row);
     padding-top:28px;
+    @include respond (mobile){
+        @include display-flex(row);
+        padding-top:28px;
+    };
     span{
         margin: v.$center;
     }
@@ -592,8 +678,16 @@ body{
         margin-right:50px;
          @include display-flex(row);
          @include font-style(v.$font-Stext,16px,100,1.5);
+         @include respond (mobile){
+            @include display-flex(row);
+            @include font-style(v.$font-Stext,15px,100,1.5);
+        };
          i{
             @include icon-style();
+            @include respond (mobile){
+                border-radius: 50%;
+                padding:10px;
+            }
          }
          
      }
@@ -603,10 +697,17 @@ body{
 .footer-row{
      @include display-flex(row);
      padding:20px 20px;
+     @include respond (mobile){
+        @include display-flex(column);
+    }
     img{
         @include width-height(120px);
         text-align: center;
         margin: v.$center;
+        @include respond (mobile){
+            @include width-height(120px);
+            margin: v.$center;
+        }
     }
     p{
         @include phone-number;
@@ -668,219 +769,5 @@ body{
 //--------------responsive display---------------------------
 
 
-@media only screen and (max-width: 1324px) {
-    .date-box{
-      
-        // .btn-date{
-           
-        // }
-        // .btn-holder{
-        //     @include width-height(750px,100%);
-        //     @include display-flex(row);
-        //     margin:v.$center;
-        //     text-align: center;
-        //     padding-top: v.$standard-margin;
-        //     @include font-style(v.$font-Stext,18px,200,1.5);
-        // }
-    
-    }
-     //carousel2:
-     .Secound-slide-show {
-        // padding:0 150px;
-     }
-    .slider2-widget{
-        // @include width-height(1000px,409px);
-        // overflow: hidden;
-        .item-slide-show {
-        // @include width-height(1000px,409px);
-        img{
-            // @include img-style ;
-        }
-        }
-    }
-    .slide-holder {
-        // margin: v.$center;
-        // overflow: hidden;
-    }
-    //cards
-    .main-gallory{
-        img{
-            // @include width-height(293px,439px); 
-        }
-    }
-    .overlay {
-        // @include width-height(293px,0px);
-        // @include position(absolute,auto,auto,68%,auto);
-    }    
-    .card:hover .overlay {
-        // height:439px ;
-    }
-    .text {
-        // @include position(absolute,45%,auto,auto,10%);
-        // @include font-style(v.$font-Stext,15px,100,1.7);
-        // text-align: start;
-    }
 
-}
-
-// @include respond (tablet){
-//     @include position(absolute,45%,auto,auto,10%);
-//     @include font-style(v.$font-Stext,15px,100,1.7);
-//     text-align: start;
-    // };
-@media only screen and (max-width: 986px) {
-    //nav
-    .center-nav-item{
-        // display: none;
-        
-    }
-    //date box
-    .date-box{
-        // @include width-height(750px,350px);
-        // flex-wrap:wrap;
-        // overflow: wrap;
-        .btn-date{
-            // @include width-height(200px,97px);
-            // padding:10px 20px ;
-            // @include font-style(v.$font-Stext,16px,200,1.5);
-        }
-        .btn-holder{
-            // @include width-height(730px,100%);
-            // @include display-flex(row);
-            // margin:v.$center;
-            // text-align: center;
-            // padding-top: v.$standard-margin;
-            // @include font-style(v.$font-Stext,18px,200,1.5);
-        }
-    
-    }
-
-    //carousel2:
-    .Secound-slide-show {
-        // padding:0 110px;
-     }
-    .slider2-widget{
-        //  @include width-height(760px,455px);
-        // overflow: hidden;
-        .item-slide-show {
-            // @include width-height(760px,455px);
-         img{
-                // @include img-style ;
-            }
-        }
-    }
-    .slide-holder {
-        // margin: v.$center;
-        // overflow: hidden;
-    }
-    //cards
-    .main-gallory{
-        img{
-            // @include width-height(220px,330px); 
-        }
-    }
-    .overlay {
-        // @include width-height(220px,0px);
-        // @include position(absolute,auto,auto,70.5%,auto);
-    }    
-    .card:hover .overlay {
-        // height:330px;
-    }
-    .text {
-        // @include position(absolute,30%,auto,auto,10%);
-        // @include font-style(v.$font-Stext,13px,100,1.5);
-        // text-align: start;
-    }
-}
-
-@media only screen and (max-width: 764px){
-     //nav
-     .center-nav-item{
-        display: none;
-    }
-    //date box
-    .date-box{
-        @include width-height(764px,750px);
-        flex-wrap:wrap;
-        overflow: wrap;
-
-        .btn-holder{
-            @include width-height(750px,750px);
-            @include display-flex(column);
-            margin:v.$center;
-            text-align: center;
-            padding-top: v.$standard-margin;
-            @include font-style(v.$font-Stext,18px,200,1.5);
-        }
-        .btn-date{
-            @include width-height(730px,159px);
-            // padding:10px 20px ;
-            @include font-style(v.$font-Stext,20px,200,1.5);
-        }
-    
-    }
-    //cards
-    .main-gallory{
-        @include display-flex(column);
-        img{
-            @include width-height(734px,1101px);
-        }
-    }
-    #ove-1 {
-        @include position(absolute,auto,auto,73%,auto);
-        @include width-height(734px,0px);
-    }
-    #ove-2 {
-        @include position(absolute,auto,auto,53.8%,auto);
-        @include width-height(734px,0px);
-    }
-    #ove-3 {
-        @include position(absolute,auto,auto,34.5%,auto);
-        @include width-height(734px,0px);
-        z-index: 88;
-    }
-    .card:hover #ove-1 {
-        height:1101px
-    }
-    .card:hover #ove-2 {
-        height:1101px
-    }
-    .card:hover #ove-3 {
-        height:1101px
-    }
-    .text {
-        @include position(absolute,55%,auto,auto,7%);
-        @include font-style(v.$font-Stext,35px,100,1.7);
-    }
-    //footer
-    .footer-widget{
-        padding-left:16px;
-    }
-    .footer-info-holder{
-        @include display-flex(row);
-        padding-top:28px;
-        span{
-            margin: v.$center;
-        }
-        .footer-info{
-            // margin-right:50px;
-             @include display-flex(row);
-             @include font-style(v.$font-Stext,15px,100,1.5);
-             i{
-                 border-radius: 50%;
-                 padding:10px;
-             }
-             
-         }
-    
-    }
-    .footer-row{
-        @include display-flex(column);
-       img{
-           @include width-height(120px);
-           margin: v.$center;
-       }
-    }
-
-}
 

@@ -17,34 +17,12 @@ $(document).ready(function () {
       transform: 'translate(0px,97px)',
       transition: "all .5s"
     });
-    if (window.matchMedia('(max-width: 1901px)').matches) {
+    let width=$('.menu').width()
       $('.menu').css({
         position: 'fixed',
-        left: '82.5vw',
+        left: `${width}px`,
         transition: "all .5s"
       });
-    }
-    if (window.matchMedia('(max-width: 1324px)').matches) {
-      $('.menu').css({
-        position: 'fixed',
-        left: '78vw',
-        transition: "all .5s"
-      });
-    }
-    if (window.matchMedia('(max-width: 986px)').matches) {
-      $('.menu').css({
-        position: 'fixed',
-        left: '67.5vw',
-        transition: "all .5s"
-      });
-    }
-    if (window.matchMedia('(max-width: 764px)').matches) {
-      $('.menu').css({
-        position: 'fixed',
-        left: '58vw',
-        transition: "all .5s"
-      });
-    }
     //shift page to left
     $('.navBar').css({
       transform: 'translateX(-300px)',
@@ -64,9 +42,36 @@ $(document).ready(function () {
       transition: "all .5s"
     })
   })
-  $('.burger-widget2').css({
-    opacity: '1',
-    transition: "all .5s"
+  $('#close-menu').click(function() {
+    $('.menu-widget').css({
+      transform: 'translate(120px,0px)',
+      transition: "all .5s"
+    });
+
+      $('.menu').css({
+        position: 'fixed',
+        left: '100vw',
+        transition: "all .5s"
+      });
+    
+    //shift page to left
+    $('.navBar').css({
+      transform: 'translateX(0px)',
+      transition: "all .5s"
+    })
+    $('.date-box-wraper').css({
+      transform: 'translate(0px,0px)',
+      transition: 'all .5s'
+    })
+    $('.wraper2').css({
+      transform: 'translate(0px,660px)',
+      transition: "all .5s"
+    })
+    //
+    $('.burger-widget').css({
+      transform: 'translate(0px,0px)',
+      transition: "all .5s"
+    })
   })
 
   //---------------go up--------------------
@@ -86,14 +91,7 @@ $(document).ready(function () {
 
     if ($(this).attr('id') === 'carousel-next') {
       if (index < length_item - 1) {
-        //respond
-        if (window.matchMedia('(max-width: 986px)').matches) {
-          $(content).css('transform', `translateX(${(index + 1) * -986}px)`)
-        } else if (window.matchMedia('(max-width: 764px)').matches) {
-          $(content).css('transform', `translateX(${(index + 1) * -986}px)`)
-        } else {
-          $(content).css('transform', `translateX(${(index + 1) * -1900}px)`)
-        }
+        $(content).css('transform', `translateX(${(index + 1) * -width}px)`)
         $(carousel).find('.caro-item.active1').removeClass('active1')
         $(carousel).find('.caro-item').eq(index + 1).addClass('active1')
 
@@ -104,13 +102,7 @@ $(document).ready(function () {
       //prev
     } else {
       if (index > 0) {
-        if (window.matchMedia('(max-width: 986px)').matches) {
-          $(content).css('transform', `translateX(${(index - 1) * -986}px)`)
-        } else if (window.matchMedia('(max-width: 764px)').matches) {
-          $(content).css('transform', `translateX(${(index- 1) * -986}px)`)
-        } else {
-          $(content).css('transform', `translateX(${(index - 1) * -1900}px)`)
-        }
+        $(content).css('transform', `translateX(${(index - 1) * -width}px)`)
         $(carousel).find('.caro-item.active1').removeClass('active1')
         $(carousel).find('.caro-item').eq(index - 1).addClass('active1')
       } else {
@@ -126,17 +118,12 @@ $(document).ready(function () {
   //auto carousel:
   function nextauto() {
     let carousel = $('.first-slide-show');
+    let width = $('.first-slide-show').width();
     let index = $(carousel).find('.caro-item.active1').index();
     let content = $(carousel).find('.carousel-holder');
     const length_item = $(carousel).find(".caro-item").length;
     if (index < length_item - 1) {
-      if (window.matchMedia('(max-width: 986px)').matches) {
-        $(content).css('transform', `translateX(${(index + 1) * -986}px)`)
-      } else if (window.matchMedia('(max-width: 764px)').matches) {
-        $(content).css('transform', `translateX(${(index + 1) * -986}px)`)
-      } else {
-        $(content).css('transform', `translateX(${(index + 1) * -1900}px)`)
-      }
+      $(content).css('transform', `translateX(${(index + 1) * -width}px)`)
       $(carousel).find('.caro-item.active1').removeClass('active1')
       $(carousel).find('.caro-item').eq(index + 1).addClass('active1')
     } else {
@@ -185,7 +172,7 @@ $.ajax({
   }
 });
 
-
+console.log($('.first-slide-show').width())
 //---------pure js carousel 2--------------------
 var slider1 = document.getElementById('carousel2'),
   sliderItems1 = document.getElementById('holder');
