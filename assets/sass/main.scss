@@ -756,16 +756,18 @@ body{
 }
 //modal:
 .modal{
-    // visibility: hidden;
+
     background-color: map-get(v.$color-pallet,"black");
     @include width-height(320);
     @include display-flex(column);
     @include position(absolute,25%,auto,auto,45%);
+    opacity: 0;
     padding:10px;
     table, th, td {
-        border: 1px solid map-get(v.$color-pallet,"blck");
+        border: 1px solid map-get(v.$color-pallet,"black");
         padding:10px;
-        background-color: map-get(v.$color-pallet,"light-gray");
+        @include font-style(v.$font-Stext,16px,100,1.5);
+        color:map-get(v.$color-pallet,"black");
     }
     th{
         background-color: map-get(v.$color-pallet,"dark-yellow");

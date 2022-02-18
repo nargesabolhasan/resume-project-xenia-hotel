@@ -1955,12 +1955,19 @@ body {
   right: auto;
   bottom: auto;
   left: 45%;
+  opacity: 0;
   padding: 10px;
 }
 .modal table, .modal th, .modal td {
-  border: 1px solid;
+  border: 1px solid #15151e;
   padding: 10px;
-  background-color: #f4f4f4;
+  -webkit-font-smoothing: antialiased;
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1.5;
+  overflow-x: hidden;
+  color: #15151e;
 }
 .modal th {
   background-color: #c5bc58;

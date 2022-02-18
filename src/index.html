@@ -109,32 +109,33 @@
         </div>
         <!------***Date box***------->
         <div class="date-box-wraper">
-            <div onsubmit="handelDate(event)" class="date-box bg-color-black">
-                <form class="btn-holder">
+            <div  class="date-box bg-color-black">
+                <form class="btn-holder" onsubmit="handelDate(event)">
                     <!-- <div class="txt-color-light-gray"> -->
                     <label class="label txt-color-gray">CHECH IN DATE
-                        <input type="text" value="select arrival date" id="date1"
-                            class="btn-date bg-color-dark-gray br-color-dark-gray txt-color-light-gray">
+                        <input type="text" value="select arrival date" name="date" id="date1"
+                            class="input btn-date bg-color-dark-gray br-color-dark-gray txt-color-light-gray">
                     </label>
                     <!-- </div> -->
                     <!-- <div class="txt-color-light-gray"> -->
                     <label class="label txt-color-gray">CHECH OUT DATE
-                        <input type="text" value="departure date select" id="date2"
-                            class="btn-date bg-color-dark-gray br-color-dark-gray txt-color-light-gray">
+                        <input type="text" value="departure date select" name="date" id="date2"
+                            class="input1 btn-date bg-color-dark-gray br-color-dark-gray txt-color-light-gray">
                     </label>
                     <!-- </div> -->
                     <!-- <div class="txt-color-light-gray"> -->
                     <label class="label txt-color-gray">ROOM NUMBER
 
-                        <select class="btn-date bg-color-dark-gray br-color-dark-gray txt-color-light-gray">
-                            <option>1</option>
-                            <option>2</option>
+                        <select name="select" class="btn-date bg-color-dark-gray br-color-dark-gray txt-color-light-gray">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="4">4</option>
                         </select>
                     </label>
                     <!-- </div> -->
 
                     <div id="request-btn-date-box">
-                        <button type="submit"
+                        <button type="submit" 
                             class="green-button bg-color-dark-gray br-color-green txt-color-green">REQUEST A
                             QUOTE
                         </button>

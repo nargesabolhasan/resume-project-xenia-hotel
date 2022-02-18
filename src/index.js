@@ -13,10 +13,10 @@ $(document).ready(function () {
   })
   //-------------drop down-----------------
   $('#home').mouseenter(function (e) {
-    $(".drop-down").css('opacity','1')
+    $(".drop-down").css('opacity', '1')
   })
   $('#home').mouseleave(function (e) {
-    $(".drop-down").css('opacity','0')
+    $(".drop-down").css('opacity', '0')
   })
   //-------------menu-----------------------
   $('#burger-menu').click(function () {
@@ -50,7 +50,8 @@ $(document).ready(function () {
         transition: "all .5s"
       });
     }
-    else {(window.matchMedia('(max-width: 1860px)').matches) 
+    else {
+      (window.matchMedia('(max-width: 1860px)').matches)
       $('.menu').css({
         position: 'fixed',
         left: '82.5vw',
@@ -76,18 +77,18 @@ $(document).ready(function () {
       transition: "all .5s"
     })
   })
-  $('#close-menu').click(function() {
+  $('#close-menu').click(function () {
     $('.menu-widget').css({
       transform: 'translate(120px,0px)',
       transition: "all .5s"
     });
 
-      $('.menu').css({
-        position: 'fixed',
-        left: '100vw',
-        transition: "all .5s"
-      });
-    
+    $('.menu').css({
+      position: 'fixed',
+      left: '100vw',
+      transition: "all .5s"
+    });
+
     //shift page to left
     $('.navBar').css({
       transform: 'translateX(0px)',
@@ -174,36 +175,44 @@ $(document).ready(function () {
 })
 function handelDate(e) {
   e.preventDefault();
-  let form = e.target
-  let formData = new FormData(form) 
-  for(var pair of formData.entries()) {
-    let index1=pair[0].getTime();
-    let index2 =pair[1].getTime();
-    console.log( index1)
-}
-}
-//ajax:
-$.ajax({
-  type: 'GET',
-  url: "./main.json",
-  cache: false,
-  success: function (response) {
-    console.log(response)
-    arrayOfDate = [],
-      tableBody = $('table'),
-      response.map(item => {
-        const enteyOfDate = new Date(item.form).getTime();
-        const enteyOfDeparture = new Date(item.to).getTime();
-        const mark = `<tr><td class="td">${item.from}</td><td class="td">${item.to}</td><td class="td">${item.room}</td></tr>`
-        tableBody.append(mark)
-        // if()
+  let from = new Date($('#date1').val());
+  let to = new Date($('#date2').val()).getTime();
+  if (from, to) {
+    $('.modal').css("opacity","1");
+    $.ajax({
+      type: 'GET',
+      url: "./main.json",
+      success: function (response) {
+            response.map(item => {
+            let entryOfDate = new Date(item.from).getTime();
+            let dateOfDeparture = new Date(item.to).getTime();
+            if (from >= entryOfDate && to <= dateOfDeparture) {
+              let inputTable = `<tr><td class="td">${item.from}</td><td class="td">${item.to}</td><td class="td">${item.room}</td></tr>`
+              $('table').append(inputTable)
+              $("tr:last").css( "backgroundColor", "#6fb586" )
 
-      })
+            }else {
+              let inputTable = `<tr><td class="td">${item.from}</td><td class="td">${item.to}</td><td class="td">${item.room}</td></tr>`
+              $('table').append(inputTable)
+              $("tr:last").css( "backgroundColor", "white" )
+            }
+
+          })
+        }
+        
+      });
   }
-});
+}
+$('#close-menu2').click(function (){
+  $('table').empty();
+  $('.modal').css("opacity","0");
+  $
+})
+
+
 
 //close
-$()
+
 //---------pure js carousel 2--------------------
 var slider1 = document.getElementById('carousel2'),
   sliderItems1 = document.getElementById('holder');
