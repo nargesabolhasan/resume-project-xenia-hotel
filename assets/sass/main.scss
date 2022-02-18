@@ -91,6 +91,7 @@ body{
         text-decoration: none ;
     }
 };
+
 .right-nav-item{
     @include position(absolute,30px,1%)
 };
@@ -103,8 +104,16 @@ body{
     background-color: #000;
     @include position(relative,45px,auto,auto,-65%);
     @include width-height(150px);
-    padding: 12px 0;
+    padding: 10px 10px;
     z-index: 9999;
+    opacity: 0;
+
+    li{
+        list-style: none;
+        margin-left:v.$standard-margin ;
+        @include font-style(v.$font-Stext,16px,300,1.5);
+        
+    }
     // visibility: hidden;
 }
 .yellow-button{
@@ -201,12 +210,13 @@ body{
         @include respond (tablet){
             @include width-height(986px,720px);
         }
+        @include respond (mobile){
+            @include width-height(764px,720px);
+        }
 
       }
   }
   
-
-
 #carousel-prev{
     @include width-height(44px,50px);
     @include btn-carousel;
@@ -356,15 +366,15 @@ body{
     @include respond (mobile){
         @include display-flex(column);
         #ove-1 {
-            @include position(absolute,auto,auto,73%,auto);
+            @include position(absolute,auto,auto,73.6%,auto);
             @include width-height(734px,0px);
         }
         #ove-2 {
-            @include position(absolute,auto,auto,53.8%,auto);
+            @include position(absolute,auto,auto,54.7%,auto);
             @include width-height(734px,0px);
         }
         #ove-3 {
-            @include position(absolute,auto,auto,34.5%,auto);
+            @include position(absolute,auto,auto,35.9%,auto);
             @include width-height(734px,0px);
             z-index: 88;
         }
@@ -427,6 +437,7 @@ body{
         @include width-height(220px,0px);
         @include position(absolute,auto,auto,70.5%,auto);
     };
+
 }
 .card:hover .overlay {
     height:540px;
@@ -494,15 +505,15 @@ body{
     margin-bottom: 100px;
     //respond
     @include respond (desktop){
-        @include width-height(100%,350px);
+        @include width-height(100%,662px);
         padding:0 150px;
     }
     @include respond (tablet){
         padding:0 110px;
     };
     @include respond (mobile){
-        padding:0 0px;
-        @include width-height(100%,960px);
+        padding: 50px 0;
+        @include width-height(100%,790px);
     };
     
     .slider2-widget {
@@ -556,7 +567,7 @@ body{
     };
     @include respond (mobile){
         padding: 20px;
-        @include width-height(760px,630px);
+        @include width-height(760px,660px);
         @include display-flex(column,center,nowrap,space-between);
 
     };
@@ -591,9 +602,8 @@ body{
             @include font-style(v.$font-Stext,16px,100, 1.5);
         }
         i{
-            border-radius: 50%;
-            padding:18px;
-            margin-right:10px;
+            margin-top:10px;
+            @include icon-style();
         }
         a{
           @include font-style(v.$font-Stext,13px,200, 1.5);
@@ -662,8 +672,6 @@ body{
             // margin-bottom:60px;
         }  
 }
-
-
 .footer-info-holder{
     @include display-flex(row);
     padding-top:28px;
@@ -693,17 +701,15 @@ body{
      }
 
 }
-
 .footer-row{
-     @include display-flex(row);
+    @include display-flex(row,center,wrap,space-between);
+    @include width-height(100%);
      padding:20px 20px;
      @include respond (mobile){
         @include display-flex(column);
     }
     img{
         @include width-height(120px);
-        text-align: center;
-        margin: v.$center;
         @include respond (mobile){
             @include width-height(120px);
             margin: v.$center;

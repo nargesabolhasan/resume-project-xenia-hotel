@@ -11,18 +11,52 @@ $(document).ready(function () {
       bottom: 60
     }, 300, "linear");
   })
+  //-------------drop down-----------------
+  $('#home').mouseenter(function (e) {
+    $(".drop-down").css('opacity','1')
+  })
+  $('#home').mouseleave(function (e) {
+    $(".drop-down").css('opacity','0')
+  })
   //-------------menu-----------------------
   $('#burger-menu').click(function () {
     $('.menu-widget').css({
       transform: 'translate(0px,97px)',
       transition: "all .5s"
     });
-    let width=$('.menu').width()
+    $('.menu-widget').css({
+      transform: 'translate(0px,97px)',
+      transition: "all .5s"
+    });
+    if (window.matchMedia('(max-width: 1324px)').matches) {
       $('.menu').css({
         position: 'fixed',
-        left: `${width}px`,
+        left: '78vw',
         transition: "all .5s"
       });
+    }
+    if (window.matchMedia('(max-width: 986px)').matches) {
+      $('.menu').css({
+        position: 'fixed',
+        left: '67.5vw',
+        transition: "all .5s"
+      });
+    }
+    if (window.matchMedia('(max-width: 764px)').matches) {
+      $('.menu').css({
+        display: "inline",
+        position: 'fixed',
+        left: '58vw',
+        transition: "all .5s"
+      });
+    }
+    else {(window.matchMedia('(max-width: 1860px)').matches) 
+      $('.menu').css({
+        position: 'fixed',
+        left: '82.5vw',
+        transition: "all .5s"
+      });
+    }
     //shift page to left
     $('.navBar').css({
       transform: 'translateX(-300px)',
@@ -85,13 +119,14 @@ $(document).ready(function () {
   $('#carousel-prev').click(carousel);
   function carousel() {
     let carousel = $(this).parents('.first-slide-show');
+    let width_carousel = $('.first-slide-show').width();
     let index = $(carousel).find('.caro-item.active1').index();
     let content = $(carousel).find('.carousel-holder');
     const length_item = $(carousel).find(".caro-item").length;
 
     if ($(this).attr('id') === 'carousel-next') {
       if (index < length_item - 1) {
-        $(content).css('transform', `translateX(${(index + 1) * -width}px)`)
+        $(content).css('transform', `translateX(${(index + 1) * -width_carousel}px)`)
         $(carousel).find('.caro-item.active1').removeClass('active1')
         $(carousel).find('.caro-item').eq(index + 1).addClass('active1')
 
@@ -113,17 +148,15 @@ $(document).ready(function () {
     }
 
   }
-
-  ///////
   //auto carousel:
   function nextauto() {
     let carousel = $('.first-slide-show');
-    let width = $('.first-slide-show').width();
+    let width_carousel = $('.first-slide-show').width();
     let index = $(carousel).find('.caro-item.active1').index();
     let content = $(carousel).find('.carousel-holder');
     const length_item = $(carousel).find(".caro-item").length;
     if (index < length_item - 1) {
-      $(content).css('transform', `translateX(${(index + 1) * -width}px)`)
+      $(content).css('transform', `translateX(${(index + 1) * -width_carousel}px)`)
       $(carousel).find('.caro-item.active1').removeClass('active1')
       $(carousel).find('.caro-item').eq(index + 1).addClass('active1')
     } else {
@@ -133,7 +166,7 @@ $(document).ready(function () {
   }
   setInterval(nextauto, 3000);
 
-  //date btn:
+  //--------------date btn-------------
   $('.btn-date').click(function () {
     $(this).attr('type', 'date')
 
@@ -143,15 +176,13 @@ $(document).ready(function () {
 })
 function handelDate(e) {
   e.preventDefault();
-  // let form = e.target
-  // let formData = new FormData(form) 
-  // for(var pair of formData.entries()) {
-  //   let index1=pair[0].getTime();
-  //   let index2 =pair[1].getTime();
-  let index12 = $('#date1').val().getTime();
-  let index22 = $('#date2').val().getTime();
-  console.log(index12, index22)
+  let form = e.target
+  let formData = new FormData(form) 
+  for(var pair of formData.entries()) {
+    let index1=pair[0].getTime();
+    let index2 =pair[1].getTime();
 
+}
 }
 $.ajax({
   type: 'GET',
@@ -210,7 +241,6 @@ function slide1(wrapper, items) {
   items.addEventListener('transitionend', checkIndex);
 
   function dragStart(e) {
-    e = e || window.event;
     e.preventDefault();
     posInitial = items.offsetLeft;
 
@@ -223,8 +253,6 @@ function slide1(wrapper, items) {
     }
   }
   function dragAction(e) {
-    e = e || window.event;
-
     if (e.type == 'touchmove') {
       posX2 = posX1 - e.touches[0].clientX;
       posX1 = e.touches[0].clientX;
@@ -279,9 +307,7 @@ function slide1(wrapper, items) {
     allowShift = true;
   }
 }
-
 //------------ pure js carousel 3---------------------
-
 var slider = document.getElementById('slider'),
   sliderItems = document.getElementById('itemse');
 slide(slider, sliderItems);
@@ -387,19 +413,46 @@ function slide(wrapper, items) {
     allowShift = true;
   }
 }
-
 //-----------------contorol buttons-----------------
-// function contorolButton(e) {
-//  $(this).find()
-// } // console.log(arr)
-$()
 
-// setInterval(auto(),3000)
-////////////////////
+// $('.fa-circle').click(carouselaa)
+// function carouselaa() {
+// var slider = document.getElementById('slider'),
+// sliderItems = document.getElementById('itemse');
+// width_slider = slider.offsetWidth;
+// act=document.getElementsByClassName('slide act');
+// index = $(slider).find(act).index();
+// const length_item =document.getElementsByClassName('slide').length;
+// console.log(act)
+// sliderItems.transform
+// Array.from(document.querySelectorAll('li')).indexOf(el)
+// content.style.transform="translateX(200px)"
 
+  // if ($(this).attr('id') === 'carousel-next') {
+  //   if (index < length_item - 1) {
+  //     $(content).css('transform', `translateX(${(index + 1) * -width_carousel}px)`)
+  //     $(carousel).find('.caro-item.active1').removeClass('active1')
+  //     $(carousel).find('.caro-item').eq(index + 1).addClass('active1')
 
+  //   } else {
+  //     $(carousel).find('.caro-item.active1').removeClass('active1')
+  //     $(carousel).find('.caro-item').eq(0).addClass('active1')
+  //   }
+  //   //prev
+  // } else {
+  //   if (index > 0) {
+  //     $(content).css('transform', `translateX(${(index - 1) * -width}px)`)
+  //     $(carousel).find('.caro-item.active1').removeClass('active1')
+  //     $(carousel).find('.caro-item').eq(index - 1).addClass('active1')
+  //   } else {
+  //     $(carousel).find('.caro-item.active1').removeClass('active1')
+  //     $(carousel).find('.caro-item').eq(0).addClass('active1')
+  //   }
 
+  // }
 
+// }
 
+carouselaa()
 
 
