@@ -545,6 +545,11 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
+@media only screen and (max-width: 986px) {
+  .center-nav-item {
+    display: none;
+  }
+}
 .center-nav-item #home {
   border-bottom: 2px solid #6fb586;
   text-decoration: none;
@@ -715,6 +720,18 @@ body {
   bottom: auto;
   left: 0;
 }
+@media only screen and (max-width: 1324px) {
+  .first-slide-show {
+    width: 1324px;
+    height: 720px;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .first-slide-show {
+    width: 986px;
+    height: 720px;
+  }
+}
 .first-slide-show .carousel-holder {
   display: flex;
   flex-direction: row;
@@ -738,6 +755,12 @@ body {
   object-position: center center;
   object-fit: cover;
   height: 720px;
+}
+@media only screen and (max-width: 986px) {
+  .caro-item .carousel-img {
+    width: 986px;
+    height: 720px;
+  }
 }
 
 #carousel-prev {
@@ -870,6 +893,14 @@ body {
   height: 284px;
   z-index: 99;
 }
+@media only screen and (max-width: 986px) {
+  .date-box {
+    width: 870px;
+    height: 350px;
+    flex-wrap: wrap;
+    overflow: wrap;
+  }
+}
 .date-box .btn-holder {
   width: 1200px;
   height: 100%;
@@ -887,6 +918,46 @@ body {
   font-weight: 200;
   line-height: 1.5;
   overflow-x: hidden;
+}
+@media only screen and (max-width: 1324px) {
+  .date-box .btn-holder {
+    width: 750px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .date-box .btn-holder {
+    width: 730px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
 }
 .date-box .btn-holder .label {
   display: flex;
@@ -906,6 +977,32 @@ body {
   font-weight: 200;
   line-height: 1.5;
   overflow-x: hidden;
+}
+@media only screen and (max-width: 1324px) {
+  .date-box .btn-date {
+    width: 200px;
+    height: 97px;
+    padding: 10px 20px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .date-box .btn-date {
+    width: 200px;
+    height: 97px;
+    padding: 10px 20px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
 }
 .date-box .btn-room {
   width: 360px;
@@ -1003,6 +1100,18 @@ body {
   left: 0%;
   width: 360px;
   height: 540px;
+}
+@media only screen and (max-width: 1324px) {
+  .main-gallory img {
+    width: 293px;
+    height: 439px;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .main-gallory img {
+    width: 220px;
+    height: 330px;
+  }
 }
 .main-gallory .card-footer {
   -webkit-font-smoothing: antialiased;
@@ -1110,9 +1219,41 @@ body {
   transition: 0.5s ease;
   z-index: 44;
 }
+@media only screen and (max-width: 1324px) {
+  .overlay {
+    width: 293px;
+    height: 0px;
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 68%;
+    left: auto;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .overlay {
+    width: 220px;
+    height: 0px;
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 70.5%;
+    left: auto;
+  }
+}
 
 .card:hover .overlay {
   height: 540px;
+}
+@media only screen and (max-width: 1324px) {
+  .card:hover .overlay {
+    height: 439px;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .card:hover .overlay {
+    height: 330px;
+  }
 }
 
 .text {
@@ -1128,6 +1269,38 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   text-align: start;
+}
+@media only screen and (max-width: 1324px) {
+  .text {
+    position: absolute;
+    top: 45%;
+    right: auto;
+    bottom: auto;
+    left: 10%;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 1.7;
+    overflow-x: hidden;
+    text-align: start;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .text {
+    position: absolute;
+    top: 30%;
+    right: auto;
+    bottom: auto;
+    left: 10%;
+    -webkit-font-smoothing: antialiased;
+    font-family: Source Sans Pro;
+    font-size: 13px;
+    font-weight: 100;
+    line-height: 1.5;
+    overflow-x: hidden;
+    text-align: start;
+  }
 }
 
 .wraper3 {
@@ -1204,6 +1377,18 @@ body {
   padding: 96px 0px;
   margin-bottom: 100px;
 }
+@media only screen and (max-width: 1324px) {
+  .Secound-slide-show {
+    width: 870px;
+    height: 350px;
+    padding: 0 150px;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .Secound-slide-show {
+    padding: 0 110px;
+  }
+}
 .Secound-slide-show .slider2-widget {
   position: relative;
   top: auto;
@@ -1215,6 +1400,20 @@ body {
   overflow: hidden;
   z-index: 1;
 }
+@media only screen and (max-width: 1324px) {
+  .Secound-slide-show .slider2-widget {
+    width: 1000px;
+    height: 409px;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .Secound-slide-show .slider2-widget {
+    width: 760px;
+    height: 455px;
+    overflow: hidden;
+  }
+}
 
 .slide-holder {
   width: 10000px;
@@ -1224,6 +1423,18 @@ body {
   right: auto;
   bottom: auto;
   left: auto;
+}
+@media only screen and (max-width: 1324px) {
+  .slide-holder {
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .slide-holder {
+    margin: 0 auto;
+    overflow: hidden;
+  }
 }
 
 #holder.shifting {
@@ -1248,9 +1459,33 @@ body {
   transition: all 1s;
   text-align: start;
 }
+@media only screen and (max-width: 1324px) {
+  .item-slide-show {
+    width: 1000px;
+    height: 409px;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .item-slide-show {
+    width: 760px;
+    height: 455px;
+  }
+}
 .item-slide-show img {
   width: 50%;
   height: 100%;
+}
+@media only screen and (max-width: 1324px) {
+  .item-slide-show img {
+    object-position: center center;
+    object-fit: cover;
+  }
+}
+@media only screen and (max-width: 986px) {
+  .item-slide-show img {
+    object-position: center center;
+    object-fit: cover;
+  }
 }
 .item-slide-show .caption-slide-show {
   padding-left: 18px;
@@ -1502,198 +1737,6 @@ body {
   padding: 0 auto;
 }
 
-@media only screen and (max-width: 1324px) {
-  .date-box {
-    width: 870px;
-    height: 350px;
-    flex-wrap: wrap;
-    overflow: wrap;
-  }
-  .date-box .btn-date {
-    width: 200px;
-    height: 97px;
-    padding: 10px 20px;
-    -webkit-font-smoothing: antialiased;
-    font-family: Source Sans Pro;
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 1.5;
-    overflow-x: hidden;
-  }
-  .date-box .btn-holder {
-    width: 750px;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 20px;
-    -webkit-font-smoothing: antialiased;
-    font-family: Source Sans Pro;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 1.5;
-    overflow-x: hidden;
-  }
-
-  .Secound-slide-show {
-    padding: 0 150px;
-  }
-
-  .slider2-widget {
-    width: 1000px;
-    height: 409px;
-    overflow: hidden;
-  }
-  .slider2-widget .item-slide-show {
-    width: 1000px;
-    height: 409px;
-  }
-  .slider2-widget .item-slide-show img {
-    object-position: center center;
-    object-fit: cover;
-  }
-
-  .slide-holder {
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  .main-gallory img {
-    width: 293px;
-    height: 439px;
-  }
-
-  .overlay {
-    width: 293px;
-    height: 0px;
-    position: absolute;
-    top: auto;
-    right: auto;
-    bottom: 68%;
-    left: auto;
-  }
-
-  .card:hover .overlay {
-    height: 439px;
-  }
-
-  .text {
-    position: absolute;
-    top: 45%;
-    right: auto;
-    bottom: auto;
-    left: 10%;
-    -webkit-font-smoothing: antialiased;
-    font-family: Source Sans Pro;
-    font-size: 15px;
-    font-weight: 100;
-    line-height: 1.7;
-    overflow-x: hidden;
-    text-align: start;
-  }
-}
-@media only screen and (max-width: 986px) {
-  .center-nav-item {
-    display: none;
-  }
-
-  .date-box {
-    width: 750px;
-    height: 350px;
-    flex-wrap: wrap;
-    overflow: wrap;
-  }
-  .date-box .btn-date {
-    width: 200px;
-    height: 97px;
-    padding: 10px 20px;
-    -webkit-font-smoothing: antialiased;
-    font-family: Source Sans Pro;
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 1.5;
-    overflow-x: hidden;
-  }
-  .date-box .btn-holder {
-    width: 730px;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 20px;
-    -webkit-font-smoothing: antialiased;
-    font-family: Source Sans Pro;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 1.5;
-    overflow-x: hidden;
-  }
-
-  .Secound-slide-show {
-    padding: 0 110px;
-  }
-
-  .slider2-widget {
-    width: 760px;
-    height: 455px;
-    overflow: hidden;
-  }
-  .slider2-widget .item-slide-show {
-    width: 760px;
-    height: 455px;
-  }
-  .slider2-widget .item-slide-show img {
-    object-position: center center;
-    object-fit: cover;
-  }
-
-  .slide-holder {
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  .main-gallory img {
-    width: 220px;
-    height: 330px;
-  }
-
-  .overlay {
-    width: 220px;
-    height: 0px;
-    position: absolute;
-    top: auto;
-    right: auto;
-    bottom: 70.5%;
-    left: auto;
-  }
-
-  .card:hover .overlay {
-    height: 330px;
-  }
-
-  .text {
-    position: absolute;
-    top: 30%;
-    right: auto;
-    bottom: auto;
-    left: 10%;
-    -webkit-font-smoothing: antialiased;
-    font-family: Source Sans Pro;
-    font-size: 13px;
-    font-weight: 100;
-    line-height: 1.5;
-    overflow-x: hidden;
-    text-align: start;
-  }
-}
 @media only screen and (max-width: 764px) {
   .center-nav-item {
     display: none;

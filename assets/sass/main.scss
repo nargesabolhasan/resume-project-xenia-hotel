@@ -81,6 +81,10 @@ body{
 .center-nav-item{
     margin:v.$center;
     @include font-style(v.$font-Stext,16px);
+    //respond
+    @include respond (tablet){
+        display: none;
+    };
     #home{
         border-bottom: 2px solid map-get(v.$color-pallet , "green");
         text-decoration: none ;
@@ -161,6 +165,13 @@ body{
     @include display-flex(row);
     @include width-height(1900px,720px);
     overflow: hidden;
+    //respond
+    @include respond (desktop){
+        @include width-height(1324px,720px);
+    }
+    @include respond (tablet){
+        @include width-height(986px,720px);
+    }
     @include position(absolute,0,auto,auto,0);
     .carousel-holder{
         @include display-flex(row,center,nowrap);
@@ -177,6 +188,11 @@ body{
         width: 1900px;
         @include img-style;
         height:720px;
+        //respond
+        @include respond (tablet){
+            @include width-height(986px,720px);
+        }
+
       }
   }
   
@@ -232,6 +248,13 @@ body{
 .date-box{
     @include width-height(1300px,284px);
     z-index: 99;
+    //respond
+    @include respond (tablet){
+        @include width-height(870px,350px);
+        flex-wrap:wrap;
+        overflow: wrap;
+    }
+
     .btn-holder{
         @include width-height(1200px,100%);
         @include display-flex(row);
@@ -239,12 +262,42 @@ body{
         text-align: center;
         padding-top: v.$standard-margin;
         @include font-style(v.$font-Stext,18px,200,1.5);
+        //respond
+        @include respond (desktop){
+            @include width-height(750px,100%);
+            @include display-flex(row);
+            margin:v.$center;
+            text-align: center;
+            padding-top: v.$standard-margin;
+            @include font-style(v.$font-Stext,18px,200,1.5);
+        }
+        @include respond (tablet){
+            @include width-height(730px,100%);
+            @include display-flex(row);
+            margin:v.$center;
+            text-align: center;
+            padding-top: v.$standard-margin;
+            @include font-style(v.$font-Stext,18px,200,1.5);
+        }
         .label {
             @include display-flex(column);
         }
     }
     .btn-date{
         @include btn-date-room;
+        //respond
+        @include respond (desktop){
+            @include width-height(200px,97px);
+            padding:10px 20px ;
+            @include font-style(v.$font-Stext,16px,200,1.5);
+        }
+        @include respond (tablet){
+            @include width-height(200px,97px);
+            padding:10px 20px ;
+            @include font-style(v.$font-Stext,16px,200,1.5);
+        }
+
+
     }
     .btn-room{
         @include btn-date-room;
@@ -276,10 +329,18 @@ body{
     @include display-flex(row);
     margin-top:100px;
     z-index:3;
+
     img{
         @include img-style;
         @include position(relative,0%,0%,0%,0%);
         @include width-height(360px,540px);
+            //recpond
+        @include respond (desktop){
+            @include width-height(293px,439px); 
+        };
+        @include respond (tablet){
+            @include width-height(220px,330px); 
+        };
         
     }
     .card-footer{
@@ -305,14 +366,41 @@ body{
     @include width-height(360px,0);
     transition: .5s ease;
     z-index: 44;
+    //recpond
+    @include respond (desktop){
+        @include width-height(293px,0px);
+        @include position(absolute,auto,auto,68%,auto);
+    };
+    @include respond (tablet){
+        @include width-height(220px,0px);
+        @include position(absolute,auto,auto,70.5%,auto);
+    };
 }
 .card:hover .overlay {
-    height:540px
+    height:540px;
+    //recpond
+    @include respond (desktop){
+        height:439px ;
+    };
+    @include respond (tablet){
+        height:330px;
+    };
 }
 .text {
     @include position(absolute,50%,auto,auto,10%);
     @include font-style(v.$font-Stext,18px,100,1.7);
     text-align: start;
+    //recpond
+    @include respond (desktop){
+        @include position(absolute,45%,auto,auto,10%);
+        @include font-style(v.$font-Stext,15px,100,1.7);
+        text-align: start;
+    };
+    @include respond (tablet){
+        @include position(absolute,30%,auto,auto,10%);
+        @include font-style(v.$font-Stext,13px,100,1.5);
+        text-align: start;
+    };
 }
 //---------------------wraper3----------------------------
 .wraper3{
@@ -348,16 +436,44 @@ body{
     @include width-height(100%,662px);
     padding:96px 0px;
     margin-bottom: 100px;
+    //respond
+    @include respond (desktop){
+        @include width-height(870px,350px);
+        padding:0 150px;
+    }
+    @include respond (tablet){
+        padding:0 110px;
+    };
+    
     .slider2-widget {
         @include position(relative);
         @include width-height(1150px,385px);
          overflow: hidden;
         z-index: 1;
+        //respond
+        @include respond (desktop){
+            @include width-height(1000px,409px);
+            overflow: hidden;
+        }
+        @include respond (tablet){
+            @include width-height(760px,455px);
+            overflow: hidden;
+        };
       }
   }
   .slide-holder {
     @include width-height(10000px);
     @include position(relative,0,auto,auto,auto);
+    //respond
+    @include respond (desktop){
+        margin: v.$center;
+        overflow: hidden;
+    }
+    @include respond (tablet){
+        margin: v.$center;
+        overflow: hidden;
+    }
+
   }
   #holder.shifting {
     transition: left .2s ease-out;
@@ -370,8 +486,21 @@ body{
     @include position(relative);
     transition: all 1s;
     text-align: start;
+    //respond
+    @include respond (desktop){
+        @include width-height(1000px,409px);
+    }
+    @include respond (tablet){
+        @include width-height(760px,455px);
+    };
     img{
         @include width-height(50%,100%);
+        @include respond (desktop){
+            @include img-style ;
+        }
+        @include respond (tablet){
+            @include img-style ;
+        };
     }
     .caption-slide-show{
         padding-left: 18px;
@@ -541,124 +670,126 @@ body{
 
 @media only screen and (max-width: 1324px) {
     .date-box{
-        @include width-height(870px,350px);
-        flex-wrap:wrap;
-        overflow: wrap;
-        .btn-date{
-            @include width-height(200px,97px);
-            padding:10px 20px ;
-            @include font-style(v.$font-Stext,16px,200,1.5);
-        }
-        .btn-holder{
-            @include width-height(750px,100%);
-            @include display-flex(row);
-            margin:v.$center;
-            text-align: center;
-            padding-top: v.$standard-margin;
-            @include font-style(v.$font-Stext,18px,200,1.5);
-        }
+      
+        // .btn-date{
+           
+        // }
+        // .btn-holder{
+        //     @include width-height(750px,100%);
+        //     @include display-flex(row);
+        //     margin:v.$center;
+        //     text-align: center;
+        //     padding-top: v.$standard-margin;
+        //     @include font-style(v.$font-Stext,18px,200,1.5);
+        // }
     
     }
      //carousel2:
      .Secound-slide-show {
-        padding:0 150px;
+        // padding:0 150px;
      }
     .slider2-widget{
-        @include width-height(1000px,409px);
-        overflow: hidden;
+        // @include width-height(1000px,409px);
+        // overflow: hidden;
         .item-slide-show {
-        @include width-height(1000px,409px);
+        // @include width-height(1000px,409px);
         img{
-            @include img-style ;
+            // @include img-style ;
         }
         }
     }
     .slide-holder {
-        margin: v.$center;
-        overflow: hidden;
+        // margin: v.$center;
+        // overflow: hidden;
     }
     //cards
     .main-gallory{
         img{
-            @include width-height(293px,439px); 
+            // @include width-height(293px,439px); 
         }
     }
     .overlay {
-        @include width-height(293px,0px);
-        @include position(absolute,auto,auto,68%,auto);
+        // @include width-height(293px,0px);
+        // @include position(absolute,auto,auto,68%,auto);
     }    
     .card:hover .overlay {
-        height:439px ;
+        // height:439px ;
     }
     .text {
-        @include position(absolute,45%,auto,auto,10%);
-        @include font-style(v.$font-Stext,15px,100,1.7);
-        text-align: start;
+        // @include position(absolute,45%,auto,auto,10%);
+        // @include font-style(v.$font-Stext,15px,100,1.7);
+        // text-align: start;
     }
 
 }
 
+// @include respond (tablet){
+//     @include position(absolute,45%,auto,auto,10%);
+//     @include font-style(v.$font-Stext,15px,100,1.7);
+//     text-align: start;
+    // };
 @media only screen and (max-width: 986px) {
     //nav
     .center-nav-item{
-        display: none;
+        // display: none;
+        
     }
     //date box
     .date-box{
-        @include width-height(750px,350px);
-        flex-wrap:wrap;
-        overflow: wrap;
+        // @include width-height(750px,350px);
+        // flex-wrap:wrap;
+        // overflow: wrap;
         .btn-date{
-            @include width-height(200px,97px);
-            padding:10px 20px ;
-            @include font-style(v.$font-Stext,16px,200,1.5);
+            // @include width-height(200px,97px);
+            // padding:10px 20px ;
+            // @include font-style(v.$font-Stext,16px,200,1.5);
         }
         .btn-holder{
-            @include width-height(730px,100%);
-            @include display-flex(row);
-            margin:v.$center;
-            text-align: center;
-            padding-top: v.$standard-margin;
-            @include font-style(v.$font-Stext,18px,200,1.5);
+            // @include width-height(730px,100%);
+            // @include display-flex(row);
+            // margin:v.$center;
+            // text-align: center;
+            // padding-top: v.$standard-margin;
+            // @include font-style(v.$font-Stext,18px,200,1.5);
         }
     
     }
 
     //carousel2:
     .Secound-slide-show {
-        padding:0 110px;
+        // padding:0 110px;
      }
     .slider2-widget{
-         @include width-height(760px,455px);
-        overflow: hidden;
+        //  @include width-height(760px,455px);
+        // overflow: hidden;
         .item-slide-show {
-            @include width-height(760px,455px);
+            // @include width-height(760px,455px);
          img{
-                @include img-style ;
+                // @include img-style ;
             }
         }
     }
     .slide-holder {
-        margin: v.$center;
-        overflow: hidden;
+        // margin: v.$center;
+        // overflow: hidden;
     }
     //cards
     .main-gallory{
         img{
-            @include width-height(220px,330px); 
+            // @include width-height(220px,330px); 
         }
     }
     .overlay {
-        @include width-height(220px,0px);
-        @include position(absolute,auto,auto,70.5%,auto);
+        // @include width-height(220px,0px);
+        // @include position(absolute,auto,auto,70.5%,auto);
     }    
     .card:hover .overlay {
-        height:330px;
+        // height:330px;
     }
     .text {
-        @include position(absolute,30%,auto,auto,10%);
-        @include font-style(v.$font-Stext,13px,100,1.5);
-        text-align: start;
+        // @include position(absolute,30%,auto,auto,10%);
+        // @include font-style(v.$font-Stext,13px,100,1.5);
+        // text-align: start;
     }
 }
 

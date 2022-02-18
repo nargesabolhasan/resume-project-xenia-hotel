@@ -135,18 +135,23 @@ overflow-x:hidden;
 }
 
 
-// @mixin respond ($breakpoint) {
-//     @if $breakpoint==tablet {
-//     @media only screen and (max-width: 1187px) {
-//       @content;
-//     }
-//   }
+@mixin respond ($breakpoint) {
+    @if $breakpoint==desktop {
+    @media only screen and (max-width: 1324px) {
+      @content;
+    }
+  }
+  @if $breakpoint==tablet {
+    @media only screen and (max-width: 986px) {
+      @content;
+    }
+  }
 
-//   @if $breakpoint==mobile {
-//     @media only screen and (max-width: 480px) {
-//       @content;
-//     }
-//   }
-// }
+  @if $breakpoint==mobile {
+    @media only screen and (max-width: 764px) {
+      @content;
+    }
+  }
+}
 
 

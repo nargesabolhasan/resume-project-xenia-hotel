@@ -17,7 +17,7 @@ $(document).ready(function () {
       transform: 'translate(0px,97px)',
       transition: "all .5s"
     });
-    if (window.matchMedia('(max-width: 1860px)').matches) {
+    if (window.matchMedia('(max-width: 1901px)').matches) {
       $('.menu').css({
         position: 'fixed',
         left: '82.5vw',
@@ -83,29 +83,46 @@ $(document).ready(function () {
     let index = $(carousel).find('.caro-item.active1').index();
     let content = $(carousel).find('.carousel-holder');
     const length_item = $(carousel).find(".caro-item").length;
-    //next
+
     if ($(this).attr('id') === 'carousel-next') {
       if (index < length_item - 1) {
-        $(content).css('transform', `translateX(${(index + 1) * -1900}px)`)
+        //respond
+        if (window.matchMedia('(max-width: 986px)').matches) {
+          $(content).css('transform', `translateX(${(index + 1) * -986}px)`)
+        } else if (window.matchMedia('(max-width: 764px)').matches) {
+          $(content).css('transform', `translateX(${(index + 1) * -986}px)`)
+        } else {
+          $(content).css('transform', `translateX(${(index + 1) * -1900}px)`)
+        }
         $(carousel).find('.caro-item.active1').removeClass('active1')
         $(carousel).find('.caro-item').eq(index + 1).addClass('active1')
+
       } else {
         $(carousel).find('.caro-item.active1').removeClass('active1')
         $(carousel).find('.caro-item').eq(0).addClass('active1')
       }
       //prev
-    }else{
+    } else {
       if (index > 0) {
-        $(content).css('transform', `translateX(${(index - 1) * -1900}px)`)
+        if (window.matchMedia('(max-width: 986px)').matches) {
+          $(content).css('transform', `translateX(${(index - 1) * -986}px)`)
+        } else if (window.matchMedia('(max-width: 764px)').matches) {
+          $(content).css('transform', `translateX(${(index- 1) * -986}px)`)
+        } else {
+          $(content).css('transform', `translateX(${(index - 1) * -1900}px)`)
+        }
         $(carousel).find('.caro-item.active1').removeClass('active1')
         $(carousel).find('.caro-item').eq(index - 1).addClass('active1')
       } else {
         $(carousel).find('.caro-item.active1').removeClass('active1')
         $(carousel).find('.caro-item').eq(0).addClass('active1')
       }
+
     }
+
   }
 
+  ///////
   //auto carousel:
   function nextauto() {
     let carousel = $('.first-slide-show');
@@ -113,7 +130,13 @@ $(document).ready(function () {
     let content = $(carousel).find('.carousel-holder');
     const length_item = $(carousel).find(".caro-item").length;
     if (index < length_item - 1) {
-      $(content).css('transform', `translateX(${(index + 1) * -1900}px)`)
+      if (window.matchMedia('(max-width: 986px)').matches) {
+        $(content).css('transform', `translateX(${(index + 1) * -986}px)`)
+      } else if (window.matchMedia('(max-width: 764px)').matches) {
+        $(content).css('transform', `translateX(${(index + 1) * -986}px)`)
+      } else {
+        $(content).css('transform', `translateX(${(index + 1) * -1900}px)`)
+      }
       $(carousel).find('.caro-item.active1').removeClass('active1')
       $(carousel).find('.caro-item').eq(index + 1).addClass('active1')
     } else {
@@ -121,39 +144,44 @@ $(document).ready(function () {
       $(carousel).find('.caro-item').eq(0).addClass('active1')
     }
   }
-  // setInterval(nextauto, 3000);
+  setInterval(nextauto, 3000);
 
   //date btn:
-  $('.btn-date').click(function(){
+  $('.btn-date').click(function () {
     $(this).attr('type', 'date')
+
   })
 
-  
+
 })
-function handelDate(e){
+function handelDate(e) {
   e.preventDefault();
-  let form = e.target
-  let formElement = new FormData(form) 
-   let stamp=formElement.get()
-  console.log(stamp)
-  
+  // let form = e.target
+  // let formData = new FormData(form) 
+  // for(var pair of formData.entries()) {
+  //   let index1=pair[0].getTime();
+  //   let index2 =pair[1].getTime();
+  let index12 = $('#date1').val().getTime();
+  let index22 = $('#date2').val().getTime();
+  console.log(index12, index22)
+
 }
 $.ajax({
-  type:'GET',
+  type: 'GET',
   url: "http://localhost:3000/room",
   cache: false,
-  success: function(response){
+  success: function (response) {
     console.log(response)
-    arrayOfDate=[],
-    tableBody=$('table'),
-    response.map(item => {
-      const enteyOfDate=new Date(item.form).getTime();
-      const enteyOfDeparture=new Date(item.to).getTime();
-      const mark=`<tr><td class="td">${item.from}</td><td class="td">${item.to}</td></tr>`
-      tableBody.append(mark)
-      // if()
+    arrayOfDate = [],
+      tableBody = $('table'),
+      response.map(item => {
+        const enteyOfDate = new Date(item.form).getTime();
+        const enteyOfDeparture = new Date(item.to).getTime();
+        const mark = `<tr><td class="td">${item.from}</td><td class="td">${item.to}</td></tr>`
+        tableBody.append(mark)
+        // if()
 
-    })
+      })
   }
 });
 
@@ -374,22 +402,14 @@ function slide(wrapper, items) {
 }
 
 //-----------------contorol buttons-----------------
-function contorolButton(e) {
-  const corent_button = e.target
-  let arr = document.querySelectorAll('.fa-circle'),
-    slide = document.querySelectorAll('.slide'),
-    slide_width = slide[0].offsetWidth,
-    sliderItems = document.getElementById('itemse'),
-    posInitial = sliderItems.offsetLeft;
-  for (let i = 0; i < arr.length; i++) {
-    if (corent_button === arr[i]) {
+// function contorolButton(e) {
+//  $(this).find()
+// } // console.log(arr)
+$()
 
-      console.log(posInitial)
-    }
-  }
-} // console.log(arr)
-
+// setInterval(auto(),3000)
 ////////////////////
+
 
 
 
