@@ -490,10 +490,9 @@ body {
 .fa-circle {
   font-size: 11px;
   margin-right: 10px;
-  opacity: 0.5;
 }
 .fa-circle:hover {
-  opacity: 1;
+  color: #15151e;
 }
 
 .a {
@@ -640,10 +639,10 @@ body {
 .drop-down {
   background-color: #000;
   position: relative;
-  top: 45px;
+  top: -30px;
   right: auto;
   bottom: auto;
-  left: -65%;
+  left: 150px;
   width: 150px;
   height: auto;
   padding: 10px 10px;
@@ -804,6 +803,11 @@ body {
 .caro-item {
   transition: all 1s;
   text-align: start;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 .caro-item .carousel-img {
   width: 1900px;
@@ -869,15 +873,20 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-wrap: nowrap;
-  position: relative;
-  top: 0%;
-  right: 0%;
+  position: absolute;
+  top: 50%;
+  right: 5vw;
   bottom: auto;
-  left: auto;
-  animation: translate_up 2s linear;
-  transform: translate(100px);
-  display: block;
+  left: 0;
+  animation: translate_up 4s infinite forwards;
+  text-align: center;
+  opacity: 100%;
   z-index: 999;
+}
+@media only screen and (max-width: 375px) {
+  .txt-car {
+    display: none;
+  }
 }
 .txt-car .title-car {
   -webkit-font-smoothing: antialiased;
@@ -896,6 +905,7 @@ body {
   overflow-x: hidden;
 }
 .txt-car .btn-car {
+  color: #f4f4f4;
   padding: 8px 24px;
   -webkit-font-smoothing: antialiased;
   font-family: Source Sans Pro;
@@ -913,7 +923,7 @@ body {
   z-index: 1;
 }
 .txt-car .btn-car:after {
-  background-color: transparent;
+  background-color: rgba(238, 238, 238, 0);
   content: "";
   position: absolute;
   bottom: 0;
@@ -934,10 +944,20 @@ body {
   z-index: -1;
 }
 .txt-car .btn-car:hover {
-  color: rgba(238, 238, 238, 0);
+  color: #8f8f8f;
 }
 .txt-car .btn-car:hover:before {
   height: 100%;
+}
+@keyframes translate_up {
+  0% {
+    opacity: 0%;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
 }
 
 .date-box-wraper {

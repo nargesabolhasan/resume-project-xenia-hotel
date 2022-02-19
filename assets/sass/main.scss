@@ -50,9 +50,8 @@ body{
 .fa-circle{
     font-size:11px;
     margin-right: 10px;
-    opacity: 0.5;
     &:hover{
-        opacity: 1; 
+        color:map-get(v.$color-pallet,"black");
     }
 }
 .a {
@@ -118,7 +117,7 @@ body{
 
 .drop-down{
     background-color: #000;
-    @include position(relative,45px,auto,auto,-65%);
+    @include position(relative,-30px,auto,auto,150px);
     @include width-height(150px);
     padding: 10px 10px;
     z-index: 9999;
@@ -130,7 +129,7 @@ body{
         @include font-style(v.$font-Stext,16px,300,1.5);
         
     }
-    // visibility: hidden;
+  
 }
 //------******menu******--------
 .menu{
@@ -225,6 +224,7 @@ body{
 .caro-item {
     transition: all 1s;
     text-align: start;
+    @include position(relative,0px,0px,0px,0px);
     .carousel-img{
         width: 1900px;
         @include img-style;
@@ -260,11 +260,14 @@ body{
 .txt-car{
     @include width-height();
     @include display-flex(column,center,nowrap);
-     @include position(relative,0%,0%,auto,auto);
-    animation: translate_up 2s linear;
-    transform: translate(100px);
-    display: block;
+     @include position(absolute,50%,5vw,auto,0);
+    animation: translate_up 4s infinite forwards  ;
+    text-align: center;
+    opacity: 100%;
     z-index: 999;
+    @include respond (S-mobile){
+        display:none;
+    };
     .title-car{
         @include font-style(v.$font-f1,50px,300,1.5);
     }
@@ -272,10 +275,16 @@ body{
         @include font-style(v.$font-f1,20px,300,1.5);
     }
     .btn-car{
+        color:map-get(v.$color-pallet,"light-gray");
         padding: v.$botton-padding;
-        @include btn-animate(transparent,
+        @include btn-animate(map-get(v.$color-pallet, "no-color"),
         map-get(v.$color-pallet,"light-gray"),
-        rgba(238, 238, 238, 0));
+        map-get(v.$color-pallet, "gray"));
+    }
+    @keyframes translate_up {
+        0%{opacity: 0%;transform:translateY(100px)}
+        100%{opacity: 100%;transform:translateY(0px)}
+        
     }
     
 }
