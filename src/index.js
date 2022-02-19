@@ -20,6 +20,7 @@ $(document).ready(function () {
   })
   //-------------menu-----------------------
   $('#burger-menu').click(function () {
+     //shift page to left:
     $('.menu-widget').css({
       transform: 'translate(0px,97px)',
       transition: "all .5s"
@@ -28,7 +29,7 @@ $(document).ready(function () {
       transform: 'translate(0px,97px)',
       transition: "all .5s"
     });
-    $('.navBar').css({
+    $('.nav-linear-item').css({
       transform: 'translateX(-300px)',
       transition: "all .5s"
     })
@@ -45,58 +46,15 @@ $(document).ready(function () {
       transform: 'translate(100px,0px)',
       transition: "all .5s"
     })
-    ////respond
-    if (window.matchMedia('(max-width: 1324px)').matches) {
-      $('.menu').css({
-        position: 'fixed',
-        left: '78vw',
-        transition: "all .5s"
-      });
-    }
-    if (window.matchMedia('(max-width: 986px)').matches) {
-      $('.menu').css({
-        position: 'fixed',
-        left: '67.5vw',
-        transition: "all .5s"
-      });
-    }
-    if (window.matchMedia('(max-width: 764px)').matches) {
-      $('.menu').css({
-        display: "inline",
-        position: 'fixed',
-        left: '58vw',
-        transition: "all .5s"
-      });
-    }
-    if (window.matchMedia('(max-width: 375px)').matches) {
-      $('.menu').css({
-        display: "inline",
-        position: 'absolute',
-        left: '20%',
-        transition: "all .5s"
-      });
-      $('.container-widget').css({
-        position: 'fixed',
-      });
-      $('.navBar').css({
-        transform: 'translateX(-200px)',
-        transition: "all .5s"
-      })
-      $('.yellow-button').css({
-        transform: 'translateX(-200px)',
-        transition: "all .5s"
-      })
-    }
-    else {
-      (window.matchMedia('(max-width: 1860px)').matches)
-      $('.menu').css({
-        position: 'fixed',
-        left: '82.5vw',
-        transition: "all .5s"
-      });
-    }
-    //shift page to left
+    //open menu:
+    $('.menu').css({
+        width:" 320px",
+        transition: "width .8s"
+    });
   })
+
+
+  //close menu
   $('#close-menu').click(function () {
     $('.menu-widget').css({
       transform: 'translate(120px,0px)',
@@ -104,13 +62,12 @@ $(document).ready(function () {
     });
 
     $('.menu').css({
-      position: 'fixed',
-      left: '100vw',
+      width:"0px",
       transition: "all .5s"
     });
 
     //shift page to left
-    $('.navBar').css({
+    $('.nav-linear-item').css({
       transform: 'translateX(0px)',
       transition: "all .5s"
     })
@@ -164,7 +121,7 @@ $(document).ready(function () {
       //prev
     } else {
       if (index > 0) {
-        $(content).css('transform', `translateX(${(index - 1) * -width}px)`)
+        $(content).css('transform', `translateX(${(index - 1) * -width_carousel}px)`)
         $(carousel).find('.caro-item.active1').removeClass('active1')
         $(carousel).find('.caro-item').eq(index - 1).addClass('active1')
       } else {
@@ -191,7 +148,7 @@ $(document).ready(function () {
       $(carousel).find('.caro-item').eq(0).addClass('active1')
     }
   }
-  setInterval(nextauto, 3000);
+  // setInterval(nextauto, 3000);
 
   //--------------date btn-------------
   $('.btn-date').click(function () {
