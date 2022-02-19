@@ -185,7 +185,7 @@ function handelDate(e) {
     $('.modal').css("opacity","1");
     $.ajax({
       type: 'GET',
-      url: "./main.json",
+      url: "../json/main.json",
       success: function (response) {
             response.map(item => {
             let entryOfDate = new Date(item.from).getTime();

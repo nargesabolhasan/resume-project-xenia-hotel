@@ -1261,6 +1261,8 @@ body {
     left: auto;
     width: 734px;
     height: 0px;
+    width: px;
+    height: 0px;
   }
 }
 @media only screen and (max-width: 375px) {
@@ -1270,6 +1272,8 @@ body {
     right: auto;
     bottom: 68.7%;
     left: auto;
+    width: 300px;
+    height: auto;
   }
 }
 @media only screen and (max-width: 764px) {
@@ -1290,6 +1294,8 @@ body {
     right: auto;
     bottom: 35.5%;
     left: auto;
+    width: 300px;
+    height: auto;
   }
 }
 @media only screen and (max-width: 764px) {
@@ -1311,6 +1317,8 @@ body {
     right: auto;
     bottom: 2%;
     left: auto;
+    width: 300px;
+    height: auto;
   }
 }
 @media only screen and (max-width: 764px) {
