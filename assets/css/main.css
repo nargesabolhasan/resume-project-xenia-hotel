@@ -1793,6 +1793,7 @@ body {
   right: auto;
   bottom: auto;
   left: auto;
+  transition: all 0.5s;
 }
 @media only screen and (max-width: 1324px) {
   .slide-holder {
@@ -1964,6 +1965,7 @@ body {
   right: auto;
   bottom: auto;
   left: auto;
+  transition: all 0.5s;
 }
 
 #itemse.shifting {

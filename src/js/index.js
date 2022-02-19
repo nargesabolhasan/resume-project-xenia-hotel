@@ -62,8 +62,6 @@ $(document).ready(function () {
   });
     }
   })
-
-
   //close menu
   $('#close-menu').click(function () {
     $('.menu-widget').css({
@@ -116,7 +114,6 @@ $(document).ready(function () {
     $("html, body").animate({ scrollTop: 0 }, "slow");
 
   })
-
   //--------------first caruosel-------------
   $('#carousel-next').click(carousel);
   $('#carousel-prev').click(carousel);
@@ -168,7 +165,6 @@ $(document).ready(function () {
     }
   }
   setInterval(nextauto, 3000);
-
   //--------------date btn-------------
   $('.btn-date').click(function () {
     $(this).attr('type', 'date')
@@ -315,7 +311,6 @@ function slide1(wrapper, items) {
     allowShift = true;
   }
 }
-
 //auto
 setInterval(carousel2,3000)
 function carousel2() {
@@ -336,7 +331,6 @@ function carousel2() {
       $(carousel).find('.item-slide-show').eq(0).addClass('active2')
   }
 }
-
 //------------ pure js carousel 3---------------------
 var slider = document.getElementById('slider'),
   sliderItems = document.getElementById('itemse');
