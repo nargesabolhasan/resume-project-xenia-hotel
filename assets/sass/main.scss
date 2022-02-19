@@ -430,9 +430,11 @@ body{
             @include respond (mobile){
                 @include position(absolute,auto,auto,67.7%,auto);
                 @include width-height(734px,0px);
+                @include width-height(px,0px);
             }
             @include respond (S-mobile){
                 @include position(absolute,auto,auto,68.7%,auto);
+                @include width-height(300px,auto);
             }
 
         }
@@ -443,7 +445,7 @@ body{
             }
             @include respond (S-mobile){
                 @include position(absolute,auto,auto,35.5%,auto);
-                
+                @include width-height(300px,auto);
             }
 
 
@@ -456,6 +458,7 @@ body{
             }
             @include respond (S-mobile){
                 @include position(absolute,auto,auto,2%,auto);
+                @include width-height(300px,auto);
             }
 
 
