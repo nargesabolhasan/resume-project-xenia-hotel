@@ -51,6 +51,16 @@ $(document).ready(function () {
         width:" 320px",
         transition: "width .8s"
     });
+    if(window.matchMedia('(max-width: 375px)').matches){
+      $('.menu').css({
+        width:" 320px",
+        position: 'absolute',
+        transition: "width .8s"
+    });     
+     $('.container-widget').css({
+      position: 'fixed',
+  });
+    }
   })
 
 
@@ -89,6 +99,15 @@ $(document).ready(function () {
         transform: 'translateX(0px)',
         transition: "all .5s"
       })
+        $('.menu').css({
+          width:" 0px",
+          position: 'fixed',
+          transition: "width .8s"
+      });     
+       $('.container-widget').css({
+        position: 'relative',
+    });
+      
     }
   })
 
@@ -148,7 +167,7 @@ $(document).ready(function () {
       $(carousel).find('.caro-item').eq(0).addClass('active1')
     }
   }
-  // setInterval(nextauto, 3000);
+  setInterval(nextauto, 3000);
 
   //--------------date btn-------------
   $('.btn-date').click(function () {
@@ -193,11 +212,6 @@ $('#close-menu2').click(function (){
   $('.modal').css("opacity","0");
   $
 })
-
-
-
-//close
-
 //---------pure js carousel 2--------------------
 var slider1 = document.getElementById('carousel2'),
   sliderItems1 = document.getElementById('holder');
@@ -408,7 +422,26 @@ function slide(wrapper, items) {
   }
 }
 //-----------------contorol buttons-----------------
+$(".fa-circle").click(carousel3)
+setInterval(carousel3,3000)
+function carousel3() {
+  let carousel = ('.slider');
+  let width_carousel = $('.slider').width();
+  let index = $(carousel).find('.slide.active3').index();
+  let content = $(carousel).find('.itemse');
+  const length_item = $(carousel).find(".slide").length;
 
+
+    if (index < length_item - 1) {
+      $(content).css('transform', `translateX(${(index + 1) * -width_carousel}px)`)
+      $(carousel).find('.slide.active3').removeClass('active3')
+      $(carousel).find('.slide').eq(index + 1).addClass('active3')
+
+    } else {
+      $(carousel).find('.slide.active3').removeClass('active3')
+      $(carousel).find('.slide').eq(0).addClass('active3')
+  }
+}
 
 
 

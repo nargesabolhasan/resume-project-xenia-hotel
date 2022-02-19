@@ -549,6 +549,11 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
+@media only screen and (max-width: 986px) {
+  .nav-linear-item .center-nav-item {
+    display: none;
+  }
+}
 .nav-linear-item .center-nav-item .ul-style-nav {
   display: flex;
   flex-direction: row;
@@ -669,7 +674,7 @@ body {
 }
 @media only screen and (max-width: 375px) {
   .menu {
-    width: 290px;
+    width: 0px;
     height: 1000px;
   }
 }
@@ -1210,6 +1215,11 @@ body {
 .text-box .providing-holder {
   transform: translateY(-200px);
 }
+@media only screen and (max-width: 764px) {
+  .text-box .providing-holder {
+    transform: translate(0px, 0px);
+  }
+}
 @media only screen and (max-width: 375px) {
   .text-box .providing-holder {
     transform: translate(0px, 100px);
@@ -1239,7 +1249,7 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    transform: translate(0px, 400px);
+    transform: translate(0px, 100px);
   }
 }
 @media only screen and (max-width: 764px) {
@@ -1247,10 +1257,19 @@ body {
     position: absolute;
     top: auto;
     right: auto;
-    bottom: 76.8%;
+    bottom: 67.7%;
     left: auto;
-    width: 300px;
+    width: 734px;
     height: 0px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .main-gallory #ove-1 {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 68.7%;
+    left: auto;
   }
 }
 @media only screen and (max-width: 764px) {
@@ -1258,10 +1277,19 @@ body {
     position: absolute;
     top: auto;
     right: auto;
-    bottom: 64.4%;
+    bottom: 34.2%;
     left: auto;
-    width: 300px;
+    width: 734px;
     height: 0px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .main-gallory #ove-2 {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 35.5%;
+    left: auto;
   }
 }
 @media only screen and (max-width: 764px) {
@@ -1269,11 +1297,20 @@ body {
     position: absolute;
     top: auto;
     right: auto;
-    bottom: 52%;
+    bottom: 1%;
     left: auto;
-    width: 300px;
+    width: 734px;
     height: 0px;
     z-index: 88;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .main-gallory #ove-3 {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 2%;
+    left: auto;
   }
 }
 @media only screen and (max-width: 764px) {
@@ -1545,7 +1582,7 @@ body {
     overflow-x: hidden;
   }
 }
-@media only screen and (max-width: 764px) {
+@media only screen and (max-width: 375px) {
   .text {
     position: absolute;
     top: 55%;
@@ -1974,6 +2011,10 @@ body {
   overflow-x: hidden;
 }
 
+.active-btn {
+  background-color: #1F1F2C;
+}
+
 .footer-wraper {
   width: 100%;
   height: 300px;
@@ -2112,7 +2153,7 @@ body {
 }
 @media only screen and (max-width: 764px) and (max-width: 375px) {
   .footer-row img {
-    transform: translateX(-100px);
+    transform: translateX(100px);
   }
 }
 .footer-row p {
@@ -2196,25 +2237,25 @@ body {
 @media only screen and (max-width: 1324px) {
   .modal {
     position: absolute;
-    top: 50%;
+    top: 20%;
     right: auto;
     bottom: auto;
-    left: 40%;
+    left: 35%;
   }
 }
 @media only screen and (max-width: 986px) {
   .modal {
     position: absolute;
-    top: 50%;
+    top: 20%;
     right: auto;
     bottom: auto;
-    left: 40%;
+    left: 30%;
   }
 }
 @media only screen and (max-width: 764px) {
   .modal {
     position: absolute;
-    top: 50%;
+    top: 20%;
     right: auto;
     bottom: auto;
     left: 30%;
@@ -2226,7 +2267,8 @@ body {
     top: 50%;
     right: auto;
     bottom: auto;
-    left: 10%;
+    left: 0%;
+    background-color: #8f8f8f;
   }
 }
 .modal table, .modal th, .modal td {
