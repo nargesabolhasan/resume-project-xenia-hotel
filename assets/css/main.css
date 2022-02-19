@@ -2011,8 +2011,12 @@ body {
   overflow-x: hidden;
 }
 
+.fa-circle {
+  color: #8f8f8f;
+}
+
 .active-btn {
-  background-color: #1F1F2C;
+  color: #15151e;
 }
 
 .footer-wraper {

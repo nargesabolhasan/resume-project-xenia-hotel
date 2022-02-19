@@ -315,6 +315,28 @@ function slide1(wrapper, items) {
     allowShift = true;
   }
 }
+
+//auto
+setInterval(carousel2,3000)
+function carousel2() {
+  let carousel = ('.Secound-slide-show');
+  let width_carousel = $('.item-slide-show').width();
+  let index = $(carousel).find('.item-slide-show.active2').index();
+  let content = $(carousel).find('.slide-holder');
+  const length_item = $(carousel).find(".item-slide-show").length;
+
+
+    if (index < length_item - 1) {
+      $(content).css('transform', `translateX(${(index + 1) * -width_carousel}px)`)
+      $(carousel).find('.item-slide-show.active2').removeClass('active2')
+      $(carousel).find('.item-slide-show').eq(index + 1).addClass('active2')
+
+    } else {
+      $(carousel).find('.item-slide-show.active2').removeClass('active2')
+      $(carousel).find('.item-slide-show').eq(0).addClass('active2')
+  }
+}
+
 //------------ pure js carousel 3---------------------
 var slider = document.getElementById('slider'),
   sliderItems = document.getElementById('itemse');
@@ -421,17 +443,38 @@ function slide(wrapper, items) {
     allowShift = true;
   }
 }
-//-----------------contorol buttons-----------------
-$(".fa-circle").click(carousel3)
-setInterval(carousel3,3000)
+//auto
+setInterval(carousel3,5000)
 function carousel3() {
+  $(".btn-car").find('.active-btn').removeClass('active-btn')
   let carousel = ('.slider');
   let width_carousel = $('.slider').width();
   let index = $(carousel).find('.slide.active3').index();
   let content = $(carousel).find('.itemse');
   const length_item = $(carousel).find(".slide").length;
 
+    if (index < length_item - 1) {
+      $(content).css('transform', `translateX(${(index + 1) * -width_carousel}px)`)
+      $(carousel).find('.slide.active3').removeClass('active3')
+      $(carousel).find('.slide').eq(index + 1).addClass('active3')
+      $('.fa-circle').eq(index).addClass('active-btn')
 
+    } else {
+      $(carousel).find('.slide.active3').removeClass('active3')
+      $(carousel).find('.slide').eq(0).addClass('active3')
+      // $('.fa-circle')[index].addClass('active-btn')
+  }
+}
+//-----------------contorol buttons-----------------
+$('.fa-circle').click(function () {
+  $(".btn-car").find('.active-btn').removeClass('active-btn')
+  $(this).addClass('active-btn')
+  let index=$(this).index()
+  let carousel = ('.slider');
+  let width_carousel = $('.slider').width();
+  // let index = $(carousel).find('.slide.active3').index();
+  let content = $(carousel).find('.itemse');
+  const length_item = $(carousel).find(".slide").length;
     if (index < length_item - 1) {
       $(content).css('transform', `translateX(${(index + 1) * -width_carousel}px)`)
       $(carousel).find('.slide.active3').removeClass('active3')
@@ -441,7 +484,7 @@ function carousel3() {
       $(carousel).find('.slide.active3').removeClass('active3')
       $(carousel).find('.slide').eq(0).addClass('active3')
   }
-}
-
+  
+})
 
 

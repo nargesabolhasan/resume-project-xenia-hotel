@@ -800,8 +800,11 @@ body{
 
     }
   }
+  .fa-circle{
+    color:map-get(v.$color-pallet,"gray");
+  }
   .active-btn{
-    background-color:map-get(v.$color-pallet,"dark-gray")
+    color:map-get(v.$color-pallet,"black");
   }
 //------******footer******--------
 .footer-wraper{
@@ -811,7 +814,7 @@ body{
     .footer-widget{
         @include display-flex(column); 
         @include respond (mobile){
-            padding-left:16px;
+        padding-left:16px;
         };
     }
         span{
