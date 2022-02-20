@@ -148,7 +148,7 @@ $(document).ready(function () {
     }
 
   }
-  //auto carousel:
+  //auto carousel 1:
   function nextauto() {
     let carousel = $('.first-slide-show');
     let width_carousel = $('.first-slide-show').width();
@@ -319,12 +319,13 @@ function carousel2() {
   let index = $(carousel).find('.item-slide-show.active2').index();
   let content = $(carousel).find('.slide-holder');
   const length_item = $(carousel).find(".item-slide-show").length;
-
+  $(".btn-car").find('.active-btn3').removeClass('active-btn3')
 
     if (index < length_item - 1) {
       $(content).css('transform', `translateX(${(index + 1) * -width_carousel}px)`)
       $(carousel).find('.item-slide-show.active2').removeClass('active2')
       $(carousel).find('.item-slide-show').eq(index + 1).addClass('active2')
+      $('.bt-car3').eq(index).addClass('active-btn3')
 
     } else {
       $(carousel).find('.item-slide-show.active2').removeClass('active2')
@@ -438,7 +439,7 @@ function slide(wrapper, items) {
   }
 }
 //auto
-setInterval(carousel3,5000)
+setInterval(carousel3,3000)
 function carousel3() {
   $(".btn-car").find('.active-btn').removeClass('active-btn')
   let carousel = ('.slider');
@@ -449,18 +450,19 @@ function carousel3() {
 
     if (index < length_item - 1) {
       $(content).css('transform', `translateX(${(index + 1) * -width_carousel}px)`)
+      $(content).css('transition', `all .5s`)
       $(carousel).find('.slide.active3').removeClass('active3')
       $(carousel).find('.slide').eq(index + 1).addClass('active3')
-      $('.fa-circle').eq(index).addClass('active-btn')
+      $('.bt-car2').eq(index).addClass('active-btn')
+
 
     } else {
       $(carousel).find('.slide.active3').removeClass('active3')
       $(carousel).find('.slide').eq(0).addClass('active3')
-      // $('.fa-circle')[index].addClass('active-btn')
   }
 }
 //-----------------contorol buttons-----------------
-$('.fa-circle').click(function () {
+$('.bt-car2').click(function () {
   $(".btn-car").find('.active-btn').removeClass('active-btn')
   $(this).addClass('active-btn')
   let index=$(this).index()
@@ -480,5 +482,29 @@ $('.fa-circle').click(function () {
   }
   
 })
+
+// caruosel2
+$('.bt-car3').click(function () {
+  $(".btn-car").find('.active-btn3').removeClass('active-btn3')
+  $(this).addClass('active-btn3')
+  let index=$(this).index()
+  let carousel = ('#carousel2');
+  let width_carousel = $('.item-slide-show').width();
+  // let index = $(carousel).find('.slide.active3').index();
+  let content = $(carousel).find('#holder');
+  const length_item = $(carousel).find(".item-slide-show").length;
+    if (index < length_item - 1) {
+      $(content).css('transform', `translateX(${(index + 1) * -width_carousel}px)`)
+      $(carousel).find('.item-slide-show.active2').removeClass('active2')
+      $(carousel).find('.item-slide-show').eq(index + 1).addClass('active2')
+
+    } else {
+      $(carousel).find('.item-slide-show.active2').removeClass('active2')
+      $(carousel).find('.item-slide-show').eq(0).addClass('active2')
+  }
+  
+})
+
+
 
 

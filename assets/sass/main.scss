@@ -47,19 +47,32 @@ body{
 .a-holder{
     @include border-bottom-anime;
 }
-.fa-circle{
-    font-size:11px;
-    margin-right: 10px;
-    &:hover{
-        color:map-get(v.$color-pallet,"black");
-    }
-}
+
 .a {
     text-decoration: none ;
     &:hover{
         color:map-get(v.$color-pallet,"green");
         
     }
+}
+.fa-circle{
+    color:map-get(v.$color-pallet,"gray");
+    margin-left:10px ;
+  }
+.mobile-icone{
+    display:none;
+    @include respond (S-mobile){
+        display:inline;
+        transform: translate(0px,600px)
+    };
+}
+.mobile-txt{
+    display:none;
+    @include respond (S-mobile){
+        display:inline-block;
+        transform: translateY(300px);
+        @include position(absolute,auto,auto,auto,0px);
+    };
 }
 //------******navBar******--------
 .navBar{
@@ -220,6 +233,7 @@ body{
 
     }
 
+
 }
 .caro-item {
     transition: all 1s;
@@ -305,13 +319,14 @@ body{
     z-index: 99;
     //respond
     @include respond (tablet){
-        @include width-height(870px,850px);
+        @include width-height(870px,300px);
         flex-wrap:wrap;
         overflow: wrap;
     }
     @include respond (mobile){
         flex-wrap:wrap;
         overflow: wrap;
+        @include width-height(764px,800px);
     };
     @include respond (S-mobile){
         @include width-height(375px,600px);
@@ -414,7 +429,7 @@ body{
         }
 
         @include respond(S-mobile){
-            transform: translate(0px,100px);
+            transform: translate(0px,-50px);
             @include width-height(300px,auto);
         }
         .h2{
@@ -435,6 +450,11 @@ body{
         transform: translate(0px,100px);
 
     }
+    @include respond (S-mobile){
+        @include display-flex(column);
+        transform: translate(0px,250px);
+
+    }
         #ove-1 {
             @include respond (mobile){
                 @include position(absolute,auto,auto,67.7%,auto);
@@ -443,7 +463,7 @@ body{
             }
             @include respond (S-mobile){
                 @include position(absolute,auto,auto,68.7%,auto);
-                @include width-height(300px,auto);
+                @include width-height(300px,0px);
             }
 
         }
@@ -454,7 +474,7 @@ body{
             }
             @include respond (S-mobile){
                 @include position(absolute,auto,auto,35.5%,auto);
-                @include width-height(300px,auto);
+                @include width-height(300px,0px);
             }
 
 
@@ -467,7 +487,7 @@ body{
             }
             @include respond (S-mobile){
                 @include position(absolute,auto,auto,2%,auto);
-                @include width-height(300px,auto);
+                @include width-height(300px,0px);
             }
 
 
@@ -600,7 +620,11 @@ body{
     @include background;
     @include respond (mobile){
         @include display-flex(column);
-        transform: translate(0px,400px);
+        transform: translate(0px,0px);
+    }
+    @include respond (S-mobile){
+        @include display-flex(column);
+        transform: translate(0px,200px);
     }
 
     .transform{
@@ -614,14 +638,17 @@ body{
         map-get(v.$color-pallet,"light-gray"));
         margin-top:v.$standard-margin;
         @include respond (mobile){
-            @include display-flex(column);
+            transform: translate(0px,-200px);
+        }
+        @include respond (S-mobile){
+            transform: translate(0px,380px);
         }
     }
     
 }
 //------******Secound carousel******--------
 .Secound-slide-show {
-    @include display-flex(row);
+    @include display-flex(column);
     @include width-height(100%,662px);
     padding:96px 0px;
     margin-bottom: 100px;
@@ -634,21 +661,21 @@ body{
         padding:0 110px;
     };
     @include respond (mobile){
-        padding: 50px 0;
-        @include width-height(100%,790px);
+        padding: 50px 10px;
+        @include width-height(100%,1000px);
+        overflow :hidden;
     };
     @include respond (S-mobile){
         margin-top:50px;
-        padding: 10px 0;
-        @include width-height(100%,950px);
+        padding:5px 8px;
+        @include width-height(100%,800px);
         transform: translate(0px,600px);
     };
 
-    
     .slider2-widget {
         @include position(relative);
         @include width-height(1150px,385px);
-         overflow: hidden;
+        overflow: hidden;
         z-index: 1;
         //respond
         @include respond (desktop){
@@ -660,28 +687,26 @@ body{
             overflow: hidden;
         };
         @include respond (mobile){
-            @include width-height(760px,790px);
+            @include width-height(700px,790px);
         };
         @include respond (S-mobile){
-            @include width-height(360px,990px);
+            @include width-height(350px,650px);
+            // margin:50px 0px;
         };
-      }
-  }
+    }
+
+}
   .slide-holder {
     @include width-height(10000px);
     @include position(relative,0,auto,auto,auto);
     //respond
     transition: all .5s;
-    @include respond (desktop){
-        margin: v.$center;
-        overflow: hidden;
-    }
 
   }
   #holder.shifting {
     transition: left .2s ease-out;
   }
-  .item-slide-show {
+.item-slide-show {
     @include display-flex(row,center,nowrap,space-between);
     @include width-height(1150px,385px);
     cursor: pointer;
@@ -697,14 +722,13 @@ body{
         @include width-height(760px,455px);
     };
     @include respond (mobile){
-        padding: 20px;
-        @include width-height(760px,660px);
+        @include width-height(700px,660px);
         @include display-flex(column,center,nowrap,space-between);
-
     };
     @include respond (S-mobile){
-        padding: 10px;
-        @include width-height(360px,840px);
+        @include display-flex(column,);
+        @include width-height(350px,auto);
+        padding: 0px;
     };
     img{
         @include width-height(50%,100%);
@@ -745,6 +769,9 @@ body{
         }
      }
 }
+.active-btn3{
+    color:map-get(v.$color-pallet,"green");
+  }
 //------******last carousel******--------
 .slider-title-box{
     @include respond (S-mobile){
@@ -775,8 +802,6 @@ body{
   }
   #itemse {
     @include width-height(10000px);
-    @include position(relative,0,auto,auto,auto);
-    transition: all .5s;
   }
   #itemse.shifting {
     transition: left .2s ease-out;
@@ -814,9 +839,7 @@ body{
 
     }
   }
-  .fa-circle{
-    color:map-get(v.$color-pallet,"gray");
-  }
+
   .active-btn{
     color:map-get(v.$color-pallet,"black");
   }
@@ -945,17 +968,20 @@ body{
     padding:10px;
     margin: v.$center;
     @include respond (desktop){
-        @include position(absolute,20%,auto,auto,35%);
+        @include position(absolute,130px,auto,auto,500px);
     };
     @include respond (tablet){
-        @include position(absolute,20%,auto,auto,30%);
+        @include position(absolute,120px,auto,auto,300px);
     };
     @include respond (mobile){
-        @include position(absolute,20%,auto,auto,30%);
+        @include position(absolute,120px,auto,auto,200px);
     };
     @include respond (S-mobile){
-        @include position(absolute,50%,auto,auto,0%);
-        background-color: map-get(v.$color-pallet,"gray");
+        @include position(absolute,130px,auto,auto,10px);
+        // background-color: map-get(v.$color-pallet,"gray");
+        @include width-height(220);
+        z-index: 9999;
+    
     };
  
     table, th, td {
@@ -963,6 +989,9 @@ body{
         padding:10px;
         @include font-style(v.$font-Stext,20px,100,1.5);
         color:map-get(v.$color-pallet,"black");
+        @include respond (S-mobile){
+         @include font-style(v.$font-Stext,16px,100,1.5);
+        };
     }
     th{
         background-color: map-get(v.$color-pallet,"dark-yellow");
